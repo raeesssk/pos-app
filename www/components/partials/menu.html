@@ -1,0 +1,23 @@
+  
+  <ion-nav-bar class="bar bar-positive">
+   </ion-nav-bar>
+
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tab title="Dine-In" icon-off="ion-ios-home" icon-on="ion-ios-home" href="#/app/dinein">
+      <ion-nav-view name="dineinContent"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Complete" icon-off="ion-ios-star" icon-on="ion-ios-star" href="#/app/completed">
+      <ion-nav-view name="completeOrder"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Pending" icon-off="ion-ios-basket" icon-on="ion-ios-basket" href="#/app/pending">
+      <ion-nav-view name="pendingOrder"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Bill" icon-off="ion-ios-card" icon-on="ion-ios-card" href="#/app/order/total">
+      <ion-nav-view name="billContent"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Logout" icon-off="ion-ios-log-out" icon-on="ion-ios-log-out" href="" ng-click="logout()">
+      <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+
+

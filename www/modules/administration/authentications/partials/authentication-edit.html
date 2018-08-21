@@ -1,0 +1,88 @@
+<ion-view view-title="New Authentication" align-title="center">
+<ion-nav-buttons side="right">
+ <!-- <button class="button" ng-click="validate()">Create</button> -->
+</ion-nav-buttons>  
+<ion-content>
+	<div class="list">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Name</span>
+		    <input type="text" placeholder="Name" ng-model="authentication.name">
+		  </label>
+
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <textarea  placeholder="Description" ng-model="authentication.description"></textarea>
+		  </label>
+
+		   <label class="item item-input item-select">
+			    <div class="input-label">
+			      Server Type
+			    </div>
+			    <select ng-model="authentication.servertype">
+			      <option>LDAP Server</option>
+			      <option selected>Active Directory</option>
+			    </select>
+	   	  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Host Name</span>
+		    <input type="text" placeholder="Host Name" ng-model="authentication.hostname">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Port</span>
+		    <input type="text" placeholder="Port" ng-model="authentication.port">
+		  </label>
+
+		  <div class="item item-toggle">
+		     SSL Enabled
+		     <label class="toggle toggle-balanced">
+		       <input type="checkbox">
+		       <div class="track">
+		         <div class="handle"></div>
+		       </div>
+		     </label>
+		  </div>
+
+		    <label class="item item-input item-select">
+			    <div class="input-label">
+			     Authentication Type
+			    </div>
+			    <select ng-model="authentication.authtype">
+			      <option>Anonymously</option>
+			      <option selected>Simple</option>
+			    </select>
+	   	 	</label>
+
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">Authorized User</span>
+		    <input type="text" placeholder="Authorized User" ng-model="authentication.authuser">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Base DN</span>
+		    <input type="password" placeholder="Base DN" ng-model="authentication.basedn">
+		  </label>
+
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">User Id Attribute</span>
+		    <input type="text" placeholder="User Id Attribute" ng-model="authentication.useridattr">
+		  </label>
+
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">Connection Timeout</span>
+		    <input type="text" placeholder="Connection Timeout" ng-model="authentication.connectiontimeout">
+		  </label>
+
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">Domain</span>
+		    <input type="text" placeholder="Domain" ng-model="authentication.domain">
+		  </label>
+		  <!--  <label class="item item-input item-floating-label"> </label> -->
+	</div>
+	
+</ion-content>
+	<ion-footer-bar  class="bar-light">
+		 <button class="button button-block button-positive" ng-click="validate()">Save</button>
+	</ion-footer-bar>
+</ion-view>

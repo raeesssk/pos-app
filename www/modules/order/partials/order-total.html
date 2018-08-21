@@ -1,0 +1,55 @@
+<ion-view view-title="Order Total">
+  <ion-content ng-init="getAll();">
+
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 " ng-if="table.tm_isreserved == 1" ng-repeat="table in tableList"><br>
+      <div class="col-offset-10" >
+          <button  ng-click="getid($index);" id="{{table.tm_id}}" class="button button-positive col-md-12 col-sm-12 col-xs-12">
+              <img ng-if="table.tm_size == '2 Seaters'" id="t2" height="80" width="80" src="img/t2.png">
+              <img ng-if="table.tm_size == '4 Seaters'" id="t2" height="80" width="80" src="img/t4.png">
+              <img ng-if="table.tm_size == '6 Seaters'" id="t2" height="80" width="80" src="img/t6.png">
+              <div>{{table.tm_description}} ({{table.am_name}})</div>
+          </button>
+      </div>
+    </div>
+         <!--  -->
+                    <!-- row -->
+  </ion-content>
+</ion-view>
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-positive">
+      <h1 class="title">Bill-Order</h1>
+        <button class="button button-clear pull-right" ng-click="closeModal()"><ion-icon name="close"></ion-icon></button> 
+    </ion-header-bar>
+    <ion-content>
+        <div class="col">
+        <table class="table table-bordered table-striped col-xs-1 col-sm-3 col-md-2">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Product Name</th>
+              <th>Quantity</th> 
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-if="print.opm_status_type != 'cancel'" ng-repeat="print in printList track by $index">
+              <td>{{print.opm_status_type}}</td>
+              <td>{{print.pm_description}} {{print.pm_quantity}}</td>
+              <td>{{print.opm_quantity}}</td>
+              <td>{{print.opm_rate}}</td>
+              <td>{{print.opm_quantity * print.opm_rate | number:2}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td align="right" colspan="4">Total:</td>
+              <td>{{orderObj.total_amount | number :2}}</td>
+            </tr>
+          </tfoot>
+        </table>
+        </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

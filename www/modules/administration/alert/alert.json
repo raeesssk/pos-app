@@ -1,0 +1,66 @@
+
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 8,
+            "offset": 0,
+            "limit": 8
+        },
+        "data": [
+            {
+                "Name":"Notification Alert",
+                "Description" : "Using Notification. A default JavaScript alert gives away the fact that your application is not native",
+                "alertId" : "Notification Alert"
+            },
+            {
+                "Name":"Reminder Alert",
+                "Description" : "The generated Lorem Ipsum is therefore always free from repetition",
+                "alertId" : "Reminder Alert"                   
+            },
+            {
+                "Name":"User Alert",
+                "Description" : "This solves the need to show messages independent of the users authenticated status",
+                "alertId" : "User Alert"              
+            }        
+        ],
+        "columns": [{
+            "show": true,
+            "attribute": "name",
+            "label": "Name",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "description",
+            "label": "Description",
+            "type": "string"
+        }],
+        "link": {
+            "linkAttribute": "alertId",
+            "labelAttribute": "alertId"
+        },
+        "page": {
+            "sectionTitle": "Email",
+            "state": "email",
+            "title": "Email",
+            "actions": [{
+                "name": "view",
+                "label": "View"
+            }, {
+                "name": "add",
+                "label": "Add"
+            }, {
+                "name": "edit",
+                "label": "Edit"
+            }, {
+                "name": "delete",
+                "label": "Delete"
+            }]
+        }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

@@ -1,0 +1,191 @@
+[{
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 8,
+			"offset": 0,
+			"limit": 8
+		},
+		"data": [{
+			"lastFailedAttempt": "2015-02-04T19:29:54.001Z",
+			"firstName": "Sujay",
+			"image": null,
+			"lastLogin": "2015-08-04T19:29:54.001Z",
+			"lastName": "Chungath",
+			"isActiveUser": true,
+			"failedAttempts": 14,
+			"isLocked": false,
+			"userId": "sujay",
+			"email": "sujay@netscitus.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2015-04-04T18:29:54.001Z",
+			"firstName": "Shiju",
+			"image": null,
+			"lastLogin": "2015-08-04T19:29:54.001Z",
+			"lastName": "Babu",
+			"isActiveUser": true,
+			"failedAttempts": 35,
+			"isLocked": false,			"userId": "shiju",
+			"email": "shijukbabu@netscitus.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2014-02-04T19:29:54.001Z",
+			"firstName": "Midhun",
+			"image": null,
+			"lastLogin": "2015-05-04T19:29:54.001Z",
+			"lastName": "Jose",
+			"isActiveUser": true,
+			"failedAttempts": 19,
+			"isLocked": false,
+			"userId": "midhun",
+			"email": "midhunjose@netscitus.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": null,
+			"firstName": "Sudheer",
+			"image": null,
+			"lastLogin": "2014-07-04T19:29:54.001Z",
+			"lastName": "Paturi",
+			"isActiveUser": true,
+			"failedAttempts": 0,
+			"isLocked": false,
+			"userId": "sudheer",
+			"email": "sudheerpaturi@netscitus.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2014-02-04T19:29:54.001Z",
+			"firstName": "Rohith",
+			"image": null,
+			"lastLogin": "2015-08-04T19:29:54.001Z",
+			"lastName": "Acharya",
+			"isActiveUser": true,
+			"failedAttempts": 73,
+			"isLocked": false,			"userId": "rohith",
+			"email": "rohithmacharya@netscitus.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2015-02-04T19:29:54.001Z",
+			"firstName": "Deepak",
+			"image": null,
+			"lastLogin": "2015-08-04T15:29:54.001Z",
+			"lastName": "Kumar",
+			"isActiveUser": true,
+			"failedAttempts": 8,
+			"isLocked": false,
+			"userId": "deepak",
+			"email": "deepak@netscitus.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2015-08-04T19:29:54.001Z",
+			"firstName": "Neeraj",
+			"image": null,
+			"lastLogin": "2015-08-04T19:29:54.001Z",
+			"lastName": "Jain",
+			"isActiveUser": true,
+			"failedAttempts": 3,
+			"isLocked": false,
+			"userId": "neeraj",
+			"email": "neeraj@vxlsystems.com",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2015-01-04T19:29:54.001Z",
+			"firstName": "Sreejith",
+			"image": null,
+			"lastLogin": "2015-07-04T19:29:54.001Z",
+			"lastName": "NT",
+			"isActiveUser": true,
+			"failedAttempts": 2,
+			"isLocked": false,
+			"userId": "sreejith",
+			"email": "sreejith@netscitus.com",
+			"enabled": true
+		}],
+		"columns": [{
+			"show": false,
+			"attribute": "userId",
+			"label": "User ID",
+			"type": "string"
+		}, {
+			"show": false,
+			"attribute": "email",
+			"label": "Email",
+			"type": "string"
+		}, {
+			"show": false,
+			"attribute": "firstName",
+			"label": "First Name",
+			"type": "string"
+		}, {
+			"show": false,
+			"attribute": "lastName",
+			"label": "Last Name",
+			"type": "string"
+		}, {
+			"show": false,
+			"attribute": "enabled",
+			"label": "Enabled",
+			"type": "boolean"
+		}, {
+			"show": false,
+			"attribute": "image",
+			"label": "Image",
+			"type": "image"
+		}, {
+			"show": false,
+			"attribute": "isActiveUser",
+			"label": "Active",
+			"type": "boolean"
+		}, {
+			"show": false,
+			"attribute": "isLocked",
+			"label": "Locked User",
+			"type": "boolean"
+		}, {
+			"show": false,
+			"attribute": "lastLogin",
+			"label": "Last Login",
+			"type": "date"
+		}, {
+			"show": false,
+			"attribute": "failedAttempts",
+			"label": "Total Failed Logins",
+			"type": "int"
+		}, {
+			"show": false,
+			"attribute": "lastFailedAttempt",
+			"label": "Last Failed On",
+			"type": "date"
+		}],
+		"link": {
+			"linkAttribute": "userId",
+			"labelAttribute": "userId"
+		},
+		"page": {
+			"sectionTitle": "Users",
+			"state": "users",
+			"title": "Users",
+			"actions": [{
+				"name": "deleteTable",
+				"label": "Delete",
+				"class":"trash",
+				"tooltip":"Delete"
+			}, {
+				"name": "suspendTable",
+				"label": "Suspend",
+				"class":"clock-o",
+				"tooltip":"Suspend"
+			}, {
+				"name": "resetTable",
+				"label": "Reset",
+				"class":"unlock-alt",
+				"tooltip":"Reset Password"
+			}]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]

@@ -1,0 +1,47 @@
+<ion-view view-title="New Single Signon" align-title="center">
+<ion-nav-buttons side="right">
+<!--  <button class="button" ng-click="validate()">Create</button> -->
+</ion-nav-buttons>  
+<ion-content>
+	<div class="list">
+
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Name</span>
+	    <input type="text" placeholder="Name" ng-model="signon.name">
+	  </label>
+	  
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Description</span>
+	    <textarea  placeholder="Description" ng-model="signon.description" ng-keyup="autoExpand($event)"></textarea>
+	  </label>
+
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Sign In Page URL</span>
+	    <input type="text" placeholder="Sign In Page URL" ng-model="signon.singinurl">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Sign Out Page URL</span>
+	    <input type="text" placeholder="Sign Out Page URL" ng-model="signon.singouturl">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Change Password</span>
+	    <input type="password" placeholder="Change Password" ng-model="signon.changepassword">
+	  </label>
+	
+	  <div class="item item-toggle">
+	     Enabled
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </div>
+	 
+	</div>
+		
+</ion-content>
+	<ion-footer-bar  class="bar-light" >
+		<button class="button button-block button-positive" ng-click="validate()">Create</button>
+	</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view view-title="Reset Password" align-title="center">
+<ion-nav-buttons side="right">
+ <!-- <button class="button" ng-click="validate()">Create</button> -->
+</ion-nav-buttons>  
+<ion-content>
+	<div class="list">
+	  
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Password</span>
+	    <input type="password" placeholder="Password" ng-model="user.password">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Confirm Password</span>
+	    <input type="password" placeholder="Confirm Password" ng-model="user.confirmpassword">
+	  </label>
+	 	  
+	</div>
+	<button class="button button-block button-positive" ng-click="">Reset</button>
+		<button class="button button-block button-dark" ng-click="">Cancel</button>
+		
+</ion-content>
+	<!-- <ion-footer-bar   >
+		<button class="button button-block button-positive" ng-click="validate()">Reset</button>
+		<button class="button button-block button-dark" ng-click="validate()">Cancel</button>
+	</ion-footer-bar> -->
+</ion-view>

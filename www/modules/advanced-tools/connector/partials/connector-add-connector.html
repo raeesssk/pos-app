@@ -1,0 +1,251 @@
+<ion-view view-title="Connector Information" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	<ion-content>
+
+		<div class="list" ng-show="databaseContentDiv">
+	
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Host Name</span>
+		    <input type="text" placeholder="Host Name" ng-model="connector.hostname">
+		  </label>
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">Port</span>
+		    <input type="text" placeholder="Port" ng-model="connector.port">
+		  </label>
+		   <label class="item item-input item-select">
+		    <div class="input-label"> Database Type </div>
+		    <select ng-model="connector.datatype">
+		        <option value="Oracle">Oracle</option>
+                <option selected value="Sybase">Sybase</option>
+                <option value="My SQL">My SQL</option>
+                <option value="Other">Other</option>
+		    </select>
+	   	  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Specify Database type</span>
+		    <input type="text" placeholder="Specify Database type" ng-model="connector.specifydatabasetype">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Please upload the driver </span>
+		    <input type="file" placeholder="Please upload the driver " ng-model="connector.uploaddriver">
+		  </label>
+		   <label class="item item-input item-floating-label">
+		    <span class="input-label">Database Name</span>
+		    <input type="text" placeholder="Database Name" ng-model="connector.databasename">
+		  </label>
+
+		</div>
+
+		<div class="list" ng-show="restContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.resturl">
+		  </label>
+		</div>
+		<div class="list" ng-show="fileContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.fileurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="jiraContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.jiraurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="derviceNowContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.deviceurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="ibmContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.ibmurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="rationalContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.rationalurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="GitHubContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.githuburl">
+		  </label>
+		</div>
+		<div class="list" ng-show="MSVSOContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.msvurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="foundationContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.foundataionurl">
+		  </label>
+		</div>
+		<div class="list" ng-show="requirmentContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.requirmenturl">
+		  </label>
+		</div>
+
+		<div class="list" ng-show="ftpContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Server</span>
+		    <input type="text" placeholder="Server" ng-model="connector.server">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Port</span>
+		    <input type="text" placeholder="Server" ng-model="connector.ftpport">
+		  </label>
+
+ 		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Root Folder</span>
+		    <input type="text" placeholder="Root Folder" ng-model="connector.rootfolder">
+		  </label>
+
+		  <div class="item item-toggle">Transfer Mode
+		     <label class="toggle toggle-balanced">
+		       <input type="checkbox" ng-model="connector.transfermode">
+		       <div class="track">
+		         <div class="handle"></div>
+		       </div>
+		     </label>
+	  	  </div>
+
+	  	  <div class="item item-toggle">Use SSL
+		     <label class="toggle toggle-balanced">
+		       <input type="checkbox" ng-model="connector.usessl">
+		       <div class="track">
+		         <div class="handle"></div>
+		       </div>
+		     </label>
+	  	  </div>
+
+		</div>
+
+		<div class="list" ng-show="emailContentDiv">
+	
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Server</span>
+		    <input type="text" placeholder="Server" ng-model="connector.emailserver">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Port</span>
+		    <input type="text" placeholder="Server" ng-model="connector.emailport">
+		  </label>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">Protocol</div>
+		    <select ng-model="connector.protocol">
+		        <option value="protocol1">protocol1</option>
+                <option selected value="protocol2">protocol2</option>
+                <option value="protocol3">protocol3</option>
+      	    </select>
+	   	  </label>
+
+	  	   <label class="item item-input item-floating-label">
+		    <span class="input-label">Email</span>
+		    <input type="text" placeholder="Email" ng-model="connector.emailemail">
+		  </label>
+
+		  <div class="item item-toggle">Use SSL
+		     <label class="toggle toggle-balanced">
+		       <input type="checkbox" ng-model="connector.emailusessl">
+		       <div class="track">
+		         <div class="handle"></div>
+		       </div>
+		     </label>
+	  	  </div>
+
+		</div>
+
+		<div class="list" ng-show="qualityContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.qualityurl">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Domain</span>
+		    <input type="text" placeholder="Domain" ng-model="connector.qualitydomain">
+		  </label>
+		</div>
+
+		<div class="list" ng-show="almContentDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">URL</span>
+		    <input type="text" placeholder="URL" ng-model="connector.almurl">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Domain</span>
+		    <input type="text" placeholder="Domain" ng-model="connector.almdomain">
+		  </label>
+		</div>
+
+		<div class="list">
+
+		   <label class="item item-input item-select checkbox-adjst">
+		   	  <div class="input-label"> Authentication Type</div>
+		   		<select ng-model="connector.authenticationType" id="authentication_type" >
+		       		<option ng-repeat="menu in authmodel" value="{{menu.type}}">{{menu.type}}</option>
+     	   		</select>
+	   	   </label>
+
+	   	  <div ng-if="connector.authenticationType == 'Username and Password' ">
+	   	  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">User Name</span>
+		    	<input type="text" placeholder="User Name" ng-model="connector.username">
+		  	</label>
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Password</span>
+		    	<input type="password" placeholder="Password" ng-model="connector.password">
+		  	</label>
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Confirm Password</span>
+		    	<input type="password" placeholder="Confirm Password" ng-model="connector.confirmpassword">
+		  	</label>
+	   	  </div>
+
+	   	  <div ng-if="connector.authenticationType == 'Auth'">
+	   	  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Key</span>
+		    	<input type="text" placeholder="Key" ng-model="connector.key">
+		  	</label>
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Secret</span>
+		    	<input type="password" placeholder="Secret" ng-model="connector.secret">
+		  	</label>
+	   	  </div>
+
+	   	  <div ng-if="connector.authenticationType == 'Token'">
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Token</span>
+		    	<input type="password" placeholder="Token" ng-model="connector.token">
+		  	</label>
+	   	  </div>
+
+
+	   	  <label class="item item-input item-floating-label">
+		   	 <span class="input-label">Select Agent</span>
+		    	<input type="text" placeholder="Select Agent" ng-model="connector.agent">
+		  	</label>
+		</div>
+	
+	</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Create</button>
+	</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,33 @@
+
+<ion-view view-title="Dine-In">
+
+<!-- <ion-spinner icon="bubbles" class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner>  -->
+
+<ion-content><!-- ng-show="loading == 'Done' " -->
+    <div class="card">
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 " ng-repeat="table in tableList | filter : table"><br>
+            <div class="col-offset-10" >
+                <button ng-if="table.tm_isreserved == 1" ng-click="getid(table);" id="{{table.tm_id}}" class="button button-positive col-md-12 col-sm-12 col-xs-12">
+                    <img ng-if="table.tm_size == '2 Seaters'" id="t2" height="80" width="80" src="img/t2.png">
+                    <img ng-if="table.tm_size == '4 Seaters'" id="t2" height="80" width="80" src="img/t4.png">
+                    <img ng-if="table.tm_size == '6 Seaters'" id="t2" height="80" width="80" src="img/t6.png">
+                    <div>{{table.tm_description}} ({{table.am_name}})</div>
+                </button>
+            </div>
+            <div class="col-offset-10">
+                <button  ng-if="table.tm_isreserved == 0" ng-click="getid(table);" id="{{table.tm_id}}" class="button button-default col-md-12 col-sm-12 col-xs-12">
+                    <img ng-if="table.tm_size == '2 Seaters'" id="t2" height="80" width="80" src="img/t2.png">
+                    <img ng-if="table.tm_size == '4 Seaters'" id="t2" height="80" width="80" src="img/t4.png">
+                    <img ng-if="table.tm_size == '6 Seaters'" id="t2" height="80" width="80" src="img/t6.png">
+                    <div>{{table.tm_description}} ({{table.am_name}})</div>
+                </button>
+            </div>
+        </div>
+
+      </div>
+
+                               <!-- col-lg-12 -->
+                        
+                            <!-- row -->
+</ion-content>
+</ion-view>

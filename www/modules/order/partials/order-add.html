@@ -1,0 +1,185 @@
+<ion-view view-title="Order Add">
+  <ion-nav-bar class="bar bar-positive">
+    <ion-nav-buttons side="left">
+      <a class="button button-clear" href="#/app/dinein"><ion-icon name="arrow-back"></ion-icon></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+<ion-content ng-init="getAll();getPrintDetails();">
+<style>
+.switch{
+  float: right;
+  margin-top: -15px;
+}
+.color{
+      background-color: white;
+}
+</style>
+              <div class="card">
+                <div class="card-header">
+                  <strong>Order</strong><br>
+                  <small>Table No: {{tableObj.tm_description}} ({{tableObj.am_name}})</small>
+                  <button class="button button-positive switch" id="getbox" ng-click="openModal()">Edit Order</button>
+                  <button class="button button-calm switch" ng-click="showCategory()">Category</button>
+                </div>
+                <div class="card-block"> 
+                  <div class="row" ng-hide="pro == 1">
+                    <div class="col-lg-12">
+                      <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="category in categoryList | filter : category"><br>
+                        <button ng-click="getPro(category);" id="{{category.ctm_id}}" style="border-radius: 15px;" class="button button-light col-xs-12 col-sm-12 col-md-12">
+                          <img ng-if="category.ctm_type == 'Starters'" id="t2" height="80" width="80" style="border-radius: 15px;" src="img/starter.png">
+                          <img ng-if="category.ctm_type == 'Chineese-Starters'" id="t2" height="80" width="80" style="border-radius: 15px;" src="img/chineesestart.png">
+                          <img ng-if="category.ctm_type == 'Veg-Meal'" id="t2" height="80" width="80" style="border-radius: 15px;" src="img/veg.png">
+                          <img ng-if="category.ctm_type == 'Non-Veg-Meal'" id="t2" height="80" width="80" style="border-radius: 15px;" src="img/nonveg.png">
+                          <img ng-if="category.ctm_type == 'Desserts'" id="t2" height="80" width="80" style="border-radius: 15px;" src="img/dessert.png">
+                          <div>{{category.ctm_type}}</div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-input-inset">
+                    <label class="item-input-wrapper">
+                        <ion-icon name="search"></ion-icon>
+                      <input type="search" placeholder="Search" ng-model="product">
+                    </label>
+                  </div>
+                  <div ng-show="pro == 1">
+                    <div class="col-xs-4 col-sm-3 col-md-2" ng-repeat="product in productList | filter:product" style="margin-bottom: 10%;">
+                      <button ng-click="addOrder(product);" id="{{product.ctm_id}}" class="btn form-control button-clear col-xs-12 col-sm-12 col-md-12">
+                        <img ng-src="data:image/png;base64,{{product.pm_image}}" height="80" width="80" style="border-radius: 5px;"><p>{{product.pm_description}} {{product.pm_quantity}}</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                  <div ng-show="pro == 1">
+                    <table class="table table-bordered table-striped col-xs-1 col-sm-3 col-md-2">
+                        <thead>
+                          <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th> 
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Action</th> 
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="item in itemList track by $index">
+                            <td>{{item.pm_description}} {{item.pm_quantity}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.pm_rate}}</td>
+                            <td>{{item.total | number}}</td>
+                            <td>  
+                              <button class="btn-danger form-control"  id="om_min" ng-click="om_min($index)"><b>-</b></button></td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td align="right" colspan="3">Total:</td>
+                            <td>{{orderObj.om_total | number:2}}</td>
+                            <td>
+                              <button class="btn btn-success" id="stop" ng-click="orderConfirm()">Place Order</button></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <div class="row" ng-show="table == 2">
+                    <div class="col-lg-12"><hr>
+                      <table class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Status</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th> 
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Action</th> 
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-if="print.opm_status_type != 'cancel'" ng-repeat="print in printList track by $index">
+                            <td>{{print.opm_status_type}}</td>
+                            <td>{{print.pm_description}} {{print.pm_quantity}}</td>
+                            <td><input type="number" ng-model="print.opm_quantity" min="1" ng-change="orderchange()" /></td>
+                            <td>{{print.opm_rate}}</td>
+                            <td>{{print.opm_quantity * print.opm_rate | number:2}}</td>
+                            <td ng-if="print.opm_status_type == 'pending'">
+                              <button class="btn-danger form-control" id="om_status" ng-click="om_status($index)" style="width: 40%; float: left;">Cancel</button>
+                              <button class="btn-success form-control" id="om_update" ng-click="om_update($index)" style="width: 40%; float: right;">Update</button>
+                            </td>
+                            <td ng-if="print.opm_status_type == 'update'">
+                              <button class="btn-danger form-control" id="om_status" ng-click="om_status($index)" style="width: 40%; float: left;">Cancel</button>
+                              <button class="btn-success form-control" id="om_update" ng-click="om_update($index)" style="width: 40%; float: right;">Update</button>
+                            </td>
+                            <td ng-if="print.opm_status_type == 'completed'"></td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td align="right" colspan="4">Total:</td>
+                            <td>{{orderObj.total_amount | number :2}}</td>
+                            <td><button class="btn btn-primary">PRINT</button></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                      <!-- col-lg-12 -->
+                  </div>
+              </div>        
+
+
+<!-- // modal for switch -->
+
+
+<!-- // end modal for switch -->
+</ion-content>
+</ion-view>
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-positive">
+      <h1 class="title">Change/Cancel</h1>
+      <p style=" font-family: Times, serif;"><b>Table No:{{tableObj.tm_description}}({{tableObj.am_name}})</b></p>
+        <button class="button button-clear pull-right" ng-click="closeModal()"><ion-icon name="close"></ion-icon></button> 
+    </ion-header-bar>
+    <ion-content>
+      <div class="row">
+        <div class="col col-offset-10">
+          <button type="button" id="del" class="button button-energized" ng-click="changeTable()">Change Table</button>
+        </div>
+        <div class="col col-offset-5">
+          <button type="button" class="button button-assertive" ng-click="deleteTable(tableObj)">Cancel Table</button>
+        </div>
+      </div>
+      <div ng-show="tab==1">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" ng-repeat="tablels in tableList | filter : tablels"><br>
+              <button ng-click="getid(tablels);" id="{{tablels.tm_id}}" style="border-radius: 5px;" class="color" ng-if="tablels.tm_isreserved == 0">
+                <img ng-if="tablels.tm_size == '2 Seaters'" id="t2" height="80" width="80" src="img/t2.png">
+                <img ng-if="tablels.tm_size == '4 Seaters'" id="t2" height="80" width="80" src="img/t4.png">
+                <img ng-if="tablels.tm_size == '6 Seaters'" id="t2" height="80" width="80" src="img/t6.png">
+                <div>{{tablels.tm_description}} ({{tablels.am_name}})</div>
+              </button>
+              <button ng-click="getid(tablels);" id="{{tablels.tm_id}}" style="border-radius: 5px;" class="btn-success" ng-if="tablels.tm_isreserved == 1" disabled="disabled">
+                <img ng-if="tablels.tm_size == '2 Seaters'" id="t2" height="80" width="80" src="img/t2.png">
+                <img ng-if="tablels.tm_size == '4 Seaters'" id="t2" height="80" width="80" src="img/t4.png">
+                <img ng-if="tablels.tm_size == '6 Seaters'" id="t2" height="80" width="80" src="img/t6.png">
+                <div>{{tablels.tm_description}} ({{tablels.am_name}})</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      <div class="col-lg-2"><br>
+        <div class="row note">
+          <div class="col-md-12" style="margin-top: 10px;">
+            <button class="avail-seat" style="width: 30px;height: 20px; background-color: green; border: black solid 2px;">
+            </button> Reserved Seat
+          </div>
+          <div class="col-md-12" style="margin-top: 10px;">
+            <button class="booked" style="width: 30px;height: 20px;background-color:white; border: black solid 2px;">
+            </button> Available Seat 
+          </div>
+        </div>
+      </div>
+    </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

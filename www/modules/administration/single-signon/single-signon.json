@@ -1,0 +1,109 @@
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 8,
+            "offset": 0,
+            "limit": 8
+        },
+        "data": [{
+            "Name": "Yahoo Server",
+            "host": "Local Host",
+            "port": 1921,
+            "sender": "Leo",
+            "signonId": "Server",
+            "sendermail": "sender.leo@gmail.com",
+            "img": "theme/images/1.jpg",
+            "primary": "off",
+            "enable": "off"
+        }, {
+            "Name": "Google Server",
+            "host": "Local Host",
+            "port": 1921,
+            "sender": "Phillips",
+            "signonId": "BBC",
+            "sendermail": "sender.phillips@gmail.com",
+            "img": "theme/images/2.jpg",
+            "primary": "off",
+            "enable": "off"
+        }, {
+            "Name": "Momax",
+            "host": "Local Host",
+            "port": 1921,
+            "sender": "Jhon",
+            "signonId": "YYY",
+            "sendermail": "sender.jhon@gmail.com",
+            "img": "theme/images/3.jpg",
+            "primary": "off",
+            "enable": "off"
+
+        }],
+        "columns": [{
+            "show": true,
+            "attribute": "signonId",
+            "label": ""
+        }, {
+            "show": true,
+            "attribute": "Name",
+            "label": "Name",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "host",
+            "label": "Host",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "port",
+            "label": "Port",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "sender",
+            "label": "Sender",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "sendermail",
+            "label": "Email",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "primary",
+            "label": "Primary",
+            "type": "boolean"
+        }, {
+            "show": true,
+            "attribute": "enabled",
+            "label": "Enable",
+            "type": "boolean"
+        }],
+        "link": {
+            "linkAttribute": "signonId",
+            "labelAttribute": "signonId"
+        },
+        "page": {
+            "sectionTitle": "Sign On",
+            "state": "Sign On",
+            "title": "Single Sign On",
+            "actions": [{
+                "name": "view",
+                "label": "View"
+            }, {
+                "name": "add",
+                "label": "Add"
+            }, {
+                "name": "edit",
+                "label": "Edit"
+            }, {
+                "name": "delete",
+                "label": "Delete"
+            }]
+        }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

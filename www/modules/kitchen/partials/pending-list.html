@@ -1,0 +1,46 @@
+<ion-view view-title="Pending-Orders">
+  <ion-nav-bar class="bar bar-positive">
+    <ion-nav-buttons side="left">
+      <a class="button button-clear"  ng-click="back()"><ion-icon name="arrow-back"></ion-icon></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content ng-init="getAll();">
+    <table class="table col-xs-1 col-sm-3 col-md-2" id="checkrecord">
+      <thead>
+        <tr>
+          <th>Order No</th>
+          <th>Table</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  ng-if="kitchen.opm_status_type == 'cancel'" ng-style=" {'background-color': 'red'}"  ng-repeat="kitchen in kitchenList">
+          <td>{{kitchen.om_no}}</td>
+          <td>{{kitchen.tm_description}} {{kitchen.am_name}}</td>
+          <td>{{kitchen.pm_description}} {{kitchen.pm_quantity}}</td>
+          <td>{{kitchen.opm_quantity}}</td>
+          <td><button class="btn btn-info" ng-click="ordercomplete($index)">
+            <ion-icon name="checkmark-circle"></ion-icon></button></td>
+        </tr>
+        <tr  ng-if="kitchen.opm_status_type == 'update'" ng-style=" {'background-color': 'yellow'}"  ng-repeat="kitchen in kitchenList">
+          <td>{{kitchen.om_no}}</td>
+          <td >{{kitchen.tm_description}} {{kitchen.am_name}}</td>
+          <td>{{kitchen.pm_description}} {{kitchen.pm_quantity}}</td>
+          <td>{{kitchen.opm_quantity}}</td>
+          <td><button class="btn btn-info" ng-click="ordercomplete($index)">
+            <ion-icon name="checkmark-circle"></ion-icon></button></td>
+        </tr>
+        <tr  ng-if="kitchen.opm_status_type == 'pending'" ng-repeat="kitchen in kitchenList">
+          <td>{{kitchen.om_no}}</td>
+          <td >{{kitchen.tm_description}} {{kitchen.am_name}}</td>
+          <td>{{kitchen.pm_description}} {{kitchen.pm_quantity}}</td>
+          <td>{{kitchen.opm_quantity}}</td>
+          <td><button class="button button-positive" ng-click="ordercomplete($index)">
+             <ion-icon name="checkmark-circle"></ion-icon></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </ion-content>
+</ion-view>

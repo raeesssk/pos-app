@@ -1,0 +1,30 @@
+<ion-view view-title="Connector Information" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	<ion-content>
+		<div class="row" >
+		    <div class="col">
+		        <div class="text-center">
+		            <h5 style="text-align: center;">Please Select Connector Type</h5>
+		        </div>
+		    </div>
+		</div>
+		<div ng-repeat="menu in dropmodel" >
+		    <div class="row" ng-if="$even ">
+		        <div class="col col-40 col-offset-10 text-center">
+					<div>
+			         <button class="button button-block" ng-click="typechanged(dropmodel[$index].type)"><i class="{{dropmodel[$index].classes}} btn-menu-dashboard"> </i></button>
+			         	<h5>{{dropmodel[$index].type}}</h5>
+			        </div>
+				</div>
+		        <div class="col col-40 text-center"  ng-if="!$last">
+		        	<div>
+			         <button class="button button-block" ng-click="typechanged(dropmodel[$index + 1].type)"><i class="{{dropmodel[$index + 1].classes}} btn-menu-dashboard"></i></button>
+			        </div>
+			        <h5>{{dropmodel[$index + 1].type}}</h5>
+		       	</div>
+		    </div>
+		</div>
+
+	</ion-content>
+</ion-view>

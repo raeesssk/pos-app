@@ -1,0 +1,26 @@
+<ion-view view-title="Backup" align-title="center">
+<ion-nav-buttons side="right">
+   <a ng-href="/#/app/filter-backup"><button class="button icon ion-funnel"></button></a>
+    <a ng-href="/#/app/add-backup"><button class="button button-dark">Add</button></a>
+</ion-nav-buttons> 
+	<ion-pane>
+	   <ion-content>
+	       <div class="list">
+            <ion-list show-delete="false" can-swipe="true">
+                 <ion-item class="item" ng-repeat="col in listArray[0].payload.data">
+                    <a  ng-href="/#/app/edit-backup/{{col.backupId}}" style="text-decoration: none;">
+                       <h3 ng-bind="col.name"></h3>
+                        <ion-option-button class="button-assertive icon ion-trash-a" ng-click="onItemDelete(col)"></ion-option-button>
+                    </a>
+                     <div class="row backup-switch">
+                        <div class="col"> 
+                             <ion-toggle ng-model="col.primary" toggle-class="toggle-balanced"  style="border:none;" 
+                              ng-click="primarybackupswitch(col,$event,$index,listArray[0].payload.data)">Primary</ion-toggle>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+	   </ion-content>
+    </ion-pane> 
+</ion-view>

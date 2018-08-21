@@ -1,0 +1,83 @@
+<ion-view view-title="Lookup Information" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	<ion-content>
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Name</span>
+		    <input type="text" placeholder="Name" ng-model="lookup.name">
+		  </label>
+	
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <textarea  placeholder="Description" ng-model="lookup.description" ng-keyup="autoExpand($event)" ></textarea>
+		  </label>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">Subject Area</div>
+		    <select ng-model="lookup.subjectarea">
+		        <option value="Oracle">Oracle</option>
+	            <option selected value="Sybase">Sybase</option>
+	            <option value="My SQL">My SQL</option>
+	            <option value="Other">Other</option>
+		    </select>
+	   	  </label>
+
+	   	   <label class="item item-input item-select">
+		    <div class="input-label">Attribute</div>
+		    <select ng-model="lookup.attribute">
+		        <option value="text">Text</option>
+	            <option selected value="number">Number</option>
+	            <option value="url">URL</option>
+	        </select>
+	   	  </label>
+
+	   	  <div ng-repeat="choice in choices">
+            <div class="row" >
+
+              <div class="col col-50">
+                <label class="item item-input">
+               		 <input type="text" placeholder="Enter Connector">
+             	 </label>
+              </div>
+
+              <div class="col col-50">
+                <label class="item item-input">
+               		 <input type="text" placeholder="Enter Source Value">
+             	 </label>
+              </div>
+
+            </div>
+
+             <div class="row">
+
+             	<div class="col col-50" >
+                  <label class="item item-input item-select">
+                     <div class="input-label">Target</div>
+                    <select ng-model="choice.userkey">
+                      <option value="high">High</option>
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                    </select>
+                  </label> 
+                </div>
+
+              <div class="col col-20">
+                 <button class="button button-balanced" ng-click="addNewChoice()" >+</button>
+              </div>
+
+               <div class="col col-20">
+                 <button class="button button-assertive" ng-click="removeChoice()" ng-hide="$index == 0">-</button>
+              </div>
+
+            </div>
+
+        </div>
+
+	   </div>
+		
+	</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Create</button>
+	</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-view view-title="Single signon" align-title="center">
+<ion-nav-buttons side="right">
+     <a ng-href="/#/app/filter-singlesignon"><button class="button icon ion-funnel"></button></a>
+     <a ng-href="/#/app/add-singlesignon"><button class="button button-dark">Add</button></a>
+  </ion-nav-buttons> 
+
+  <ion-spinner icon="bubbles" class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner> 
+     <ion-content>
+        <div class="list" ng-show="loading == 'Done'">
+            <div class="item" ng-repeat="col in listArray[0].payload.data.content">
+                <a ng-href="/#/app/edit-singlesignon/{{col.id}}" style="text-decoration: none;">
+                   <h3 ng-bind="col.name"></h3>
+                   <!--  <p ng-bind="col.host"></p> -->
+                    <p ng-bind="col.description"></p>
+                </a>
+                 <div class="row email-switch">
+                    <div class="col"> 
+                         <ion-toggle ng-model="col.primary" toggle-class="toggle-balanced"  style="border:none;" 
+                          ng-click="primaryswitch(col,$event,$index,listArray[0].payload.data)">Primary</ion-toggle>
+                    </div>
+                   
+                   <div class="col"> 
+                       <ion-toggle ng-model="col.enable" toggle-class="toggle-balanced"  ng-click="enableswitch(col,$event,$index)" style="border:none;">Enabled</ion-toggle>
+                   </div>
+                </div>
+           </div>
+        </div>
+    </ion-content>
+ </ion-view>

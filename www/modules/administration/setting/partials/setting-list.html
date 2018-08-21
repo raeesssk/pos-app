@@ -1,0 +1,59 @@
+ <ion-view view-title="Setting" align-title="center">
+<ion-nav-buttons side="right" >
+ <a ng-href="/#/app/setting-add"  ng-show="domaindiv"><button class="button button-dark">Add</button></a>
+</ion-nav-buttons>  
+  <ion-content >
+
+     <div class="tabs-top tabs-striped tabs-background-positive tabs-color-light  tab-adjust">
+        <div class="tabs">
+          <a ng-class="{active:tabID === 'info'}"><a ng-click="info('info')" id="infotab" class="tab-item active"> Information </a>
+          <a ng-class="{active:tabID === 'domain'}"><a ng-click="domain('domain')" id="domaintab" class="tab-item "> Domains </a>
+        </div>
+      </div>
+
+       <div class="list" ng-show="infodiv">
+            <ion-list ng-repeat="col in listArrayinfo[0].payload.data" >
+              <a class="item " ng-href="/#/app/setting-edit/{{col.settinId}}" >
+                  <h3>Company Name</h3>
+                  <p ng-bind="col.name"></p>
+              </a>
+               <a class="item " ng-href="/#/app/setting-edit/{{col.settinId}}" >
+                  <h3>Information</h3>
+                  <p ng-bind="col.information"></p>
+              </a>
+               <a class="item " ng-href="/#/app/setting-edit/{{col.settinId}}" >
+                  <h3>Language</h3>
+                  <p ng-bind="col.language"></p>
+              </a>
+               <a class="item " ng-href="/#/app/setting-edit/{{col.settinId}}" >
+                  <h3>Time Zone</h3>
+                  <p ng-bind="col.time_zone"></p>
+              </a>
+               <a class="item " ng-href="/#/app/setting-edit/{{col.settinId}}" >
+                  <h3>Date Formate</h3>
+                 <p ng-bind="col.date_formate"></p>
+              </a>
+               <a class="item " ng-href="/#/app/setting-edit/{{col.settinId}}" >
+                  <h3>Public Key</h3>
+                  <p ng-bind="col.public_key"></p>
+              </a>
+           </ion-list> 
+       </div>
+    
+      <div class="list" ng-show="domaindiv">
+        <ion-item class="item " ng-repeat="col in listArray[0].payload.data">
+           <a  ng-href="" style="text-decoration: none;"> 
+               <h3 ng-bind="col.Name"></h3>
+            </a>
+           
+            <div class="row backup-switch">
+                <div class="col"> 
+                     <ion-toggle ng-model="col.primary" toggle-class="toggle-balanced"  style="border:none;" 
+                      ng-click="primarybackupswitch(col,$event,$index,listArray[0].payload.data)">Primary</ion-toggle>
+                </div>
+            </div>
+        </ion-item>
+     </div>
+
+  </ion-content>
+</ion-view>

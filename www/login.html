@@ -1,0 +1,58 @@
+<html ng-app="vxl-mobile">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>VXL Login</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+     <link href="css/style.css" rel="stylesheet"> 
+  </head>
+
+  <body ng-controller="loginCtrl">
+
+   
+
+   <ion-view>
+
+   <!--  <ion-spinner icon="bubbles" id="load"class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner>  -->
+    
+    <ion-content >
+      <div id="logo">
+        <img src="img/logo.png">
+      </div>
+        <div class="card">
+
+          <div class="col">
+          <label class="item item-input">
+            <input type="text" ng-model="login.username" placeholder="Username" id="username">
+          </label>
+          <label class="item item-input">
+            <input type="password" ng-model="login.password" placeholder="Password" id="password">
+          </label>
+           <button id="next" type="submit" class="button button-block button-positive" type="button" ng-click="validation()">Next</button>
+
+           <button id="back" type="submit" class="button button-block button-default" type="button" ng-click="back()">Back</button>
+          <!--  <a ng-href="signup.html"><button class="button button-block button-default" type="button">Sign Up</button></a> -->
+            
+          </div>
+          
+        </div>
+        <div class="devlogo">
+             <h5>Powered By</h5> <img class="dev" src="img/dev-logo.png" alt="logo">
+            </div>
+    </ion-content>
+
+  </ion-view> 
+
+  </body>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+     <!-- OC Lazy Load -->
+    <script src="lib/oc-lazy-load/ocLazyLoad.min.js"></script>
+    <!-- app Config -->
+    <script src="app.js"></script>
+    <!-- global Controller -->
+    <script src="components/js/login.js"></script>
+ </html>
+

@@ -1,0 +1,74 @@
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 4,
+            "offset": 0,
+            "limit": 4
+        },
+        "data": [{
+                "Name":"Database Agent",
+                "Description" : " An agent configured to push data from remote MYSQL / MSSQL database to app analytic server.",
+                "enabled": true,
+                "agentId" : "Database Agent" 
+            },
+            {
+                "Name":"Remote Oracle Agent",
+                "Description" : "An agent configured to push data from remote Oracle server to app analytic server.",
+                "enabled": true,
+                "agentId" : "Remote Oracle Agent"              
+            },
+            {
+                "Name":"JIRA Agent",
+                "Description" : "An agent configured to push data from In-House JIRA server to app analytic server.",
+                "enabled": true,
+                "agentId" : "JIRA Agent"      
+            }],
+        "columns": [{
+            "show": true,
+            "attribute": "Name",
+            "label": "Name",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "Description",
+            "label": "Description",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "enabled",
+            "label": "Enabled",
+            "type": "string"
+        }],
+        "link": {
+            "linkAttribute": "agentId",
+            "labelAttribute": "agentId"
+        },
+        "page": {
+            "sectionTitle": "Agent",
+            "state": "Agent",
+            "title": "Agent",
+            "actions": [{
+                "name": "delete",
+                "label": "Delete",
+                "class":"trash",
+                "tooltip":"Delete"
+            }, {
+                "name": "clone",
+                "label": "Clone",
+                "class":"clone",
+                "tooltip":"Clone"
+            },{
+                "name": "download",
+                "label": "Download",
+                "class" :"download",
+                "tooltip":"Download"
+            }]
+        }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

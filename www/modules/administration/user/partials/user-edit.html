@@ -1,0 +1,46 @@
+<ion-view view-title="Edit User" align-title="center">
+<ion-nav-buttons side="right">
+<!--  <button class="button" ng-click="validate()" >Save</button> -->
+</ion-nav-buttons>  
+
+<ion-spinner icon="bubbles" class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner>
+
+<ion-content ng-show="loading == 'Done'">
+	<div class="list">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">First Name</span>
+	    <input type="text" placeholder="First Name" ng-model="user.firstname">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Last Name</span>
+	    <input type="text" placeholder="Last Name" ng-model="user.lastname">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Email</span>
+	    <input type="text" placeholder="Email" ng-model="user.email">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Password</span>
+	    <input type="password" placeholder="Password" ng-model="user.password">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Confirm Password</span>
+	    <input type="password" placeholder="Confirm Password" ng-model="user.confirmpassword">
+	  </label>
+	  <div class="item item-toggle">
+	     Enabled
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox" id="switchchange" ng-model="user.enableUser" >
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </div>
+	
+	</div>
+	 
+</ion-content>
+	<ion-footer-bar  class="bar-light" >
+		<button class="button button-block button-positive"  ng-click="validate()" >Save</button>
+	</ion-footer-bar>
+</ion-view>

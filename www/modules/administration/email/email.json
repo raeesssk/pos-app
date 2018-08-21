@@ -1,0 +1,121 @@
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 8,
+            "offset": 0,
+            "limit": 8
+        },
+        "data": [{
+            "Name": "SMTP Server",
+            "host": "Local Host",
+            "port": 9022,
+            "sender": "Smith",
+            "sendermail": "sender.smith@gmail.com",
+            "img": "theme/images/1.jpg",
+            "emailId" : "Server",
+            "primary": "off",
+            "enable": "off"
+
+        }, {
+            "Name": "Yahoo Server",
+            "host": "Local Host",
+            "port": 9023,
+            "sender": "Hector",
+            "sendermail": "sender.hector@gmail.com",
+            "img": "theme/images/2.jpg",
+            "emailId" : "BBC",
+            "primary": "off",
+            "enable": "off"
+
+        }, {
+            "Name": "ZNET Server",
+            "host": "Local Host",
+            "port": 9024,
+            "sender": "Symond",
+            "sendermail": "sender.symonds@gmail.com",
+            "img": "theme/images/3.jpg",
+            "emailId" : "YYY",
+            "primary": "off",
+            "enable": "off"
+        }, {
+            "Name": "Google Server",
+            "host": "Local Host",
+            "port": 9025,
+            "sender": "Rohn",
+            "sendermail": "sender.rohn@gmail.com",
+            "img": "theme/images/3.jpg",
+            "emailId" : "MMM",
+            "primary": "true",
+            "enable": "true"
+        }],
+        "columns": [{
+            "show": true,
+            "attribute": "emailId",
+            "label": "",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "Name",
+            "label": "Name",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "host",
+            "label": "Host",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "port",
+            "label": "Port",
+            "type": "number"
+        }, {
+            "show": false,
+            "attribute": "sender",
+            "label": "Sender",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "sendermail",
+            "label": "Email",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "primary",
+            "label": "Primary",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "enable",
+            "label": "Enable",
+            "type": "string"
+        }],
+        "link": {
+            "linkAttribute": "emailId",
+            "labelAttribute": "emailId"
+        },
+        "page": {
+            "sectionTitle": "Email",
+            "state": "email",
+            "title": "Email",
+            "actions": [{
+                "name": "view",
+                "label": "View"
+            }, {
+                "name": "add",
+                "label": "Add"
+            }, {
+                "name": "edit",
+                "label": "Edit"
+            }, {
+                "name": "delete",
+                "label": "Delete"
+            }]
+        }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

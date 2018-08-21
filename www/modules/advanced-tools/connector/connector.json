@@ -1,0 +1,83 @@
+[{
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 8,
+			"offset": 0,
+			"limit": 8
+		},
+		"data": [{
+			"conectorId": "SQL",
+			"description": "Connector for connecting to SQL server instance.",
+			"connector_type": "Database",
+			"authentication_type": "Database",
+			"enabled": true,
+			"agents": "Remot agent 1"
+		},
+		{
+			"conectorId": "Oracle",
+			"description": "Connector for connecting to Oracle server instance.",
+			"connector_type": "Email",
+			"authentication_type": "JIRA",
+			"enabled": true,
+			"agents": "Push agent 1"
+		},
+		{
+			"conectorId": "SQLite",
+			"description": "Connector for connecting to remote SQLite instance.",
+			"connector_type": "FTP",
+			"authentication_type": "REST",
+			"enabled": true,
+			"agents": "Remot agent 2"
+		},
+		{
+			"conectorId": "MongoDb",
+			"description": "Connector for connecting to MongoDB instance.",
+			"connector_type": "REST",
+			"authentication_type": "Basic",
+			"enabled": true,
+			"agents": "Push agent 2"
+		}],
+		"columns": [{
+			"show": true,
+			"attribute": "conectorId",
+			"label": "Name",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "description",
+			"label": "Description",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "connector_type",
+			"label": "Connector Type",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "authentication_type",
+			"label": "Authentication Type",
+			"type": "string"
+		}],
+		"link": {
+			"linkAttribute": "userId",
+			"labelAttribute": "userId"
+		},
+		"page": {
+			"sectionTitle": "Users",
+			"state": "users",
+			"title": "Connector",
+			"actions": [{
+                "name": "delete",
+                "label": "Delete",
+                "class":"trash",
+                "tooltip":"Delete"
+            }]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]

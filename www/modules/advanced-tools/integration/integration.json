@@ -1,0 +1,86 @@
+[{
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 8,
+			"offset": 0,
+			"limit": 8
+		},
+		"data": [{
+			"integrationName": "Issues Integration",
+			"subjectArea": "Issues",
+			"connector": "Bugzilla REST Connector",
+			"scheduleType": "Once",
+			"enabled": true
+		},
+		{
+			"integrationName": "Defects Integration",
+			"subjectArea": "Defects",
+			"connector": "JIRA Conenctor",
+			"scheduleType": "Daily",
+			"enabled": true
+		},
+		{
+			"integrationName": "Time Sheet Integration",
+			"subjectArea": "Time Track",
+			"connector": "Sprintly REST Connector",
+			"scheduleType": "Weekly",
+			"enabled": true
+		},
+		{
+			"integrationName": "Code Commit Integration",
+			"subjectArea": "Code Tracking",
+			"connector": "Github Webhook",
+			"scheduleType": "Monthly",
+			"enabled": true
+		},
+		{
+			"integrationName": "Test Coverage Integration",
+			"subjectArea": "Testing",
+			"connector": "Sonar Code REST Connector",
+			"scheduleType": "Yearly",
+			"enabled": true
+		}],
+		"columns": [{
+			"show": true,
+			"attribute": "integrationName",
+			"label": "Integration Name",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "subjectArea",
+			"label": " Subject Area",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "connector",
+			"label": "Connector",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "scheduleType",
+			"label": "Schedule Type",
+			"type": "string"
+		}],
+		"link": {
+			"linkAttribute": "userId",
+			"labelAttribute": "userId"
+		},
+		"page": {
+			"sectionTitle": "Users",
+			"state": "users",
+			"title": "Integration",
+			"actions": [{
+                "name": "delete",
+                "label": "Delete",
+                "class":"trash",
+                "tooltip":"Delete"
+            }]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]

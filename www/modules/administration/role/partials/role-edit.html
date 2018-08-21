@@ -1,0 +1,86 @@
+ <ion-view view-title="Edit Role" align-title="center">
+<ion-nav-buttons side="right" >
+<!--  <button class="button" ng-show="infodiv" ng-click="validate()">Save</button> -->
+</ion-nav-buttons>  
+	<ion-content >
+
+		 <div class="tabs-top tabs-striped tabs-background-positive tabs-color-light tab-adjust">
+		    <div class="tabs">
+		      <a ng-class="{active:tabID === 'info'}"><a ng-click="info('info')" id="infotab" class="tab-item active"> Information </a>
+		      <a ng-class="{active:tabID === 'permition'}"><a ng-click="permition('permition')" id="permitiontab" class="tab-item"> Permission</a>
+		      <a ng-class="{active:tabID === 'group'}"><a ng-click="group('group')" id="grouptab" class="tab-item "> Group </a>
+		  	  
+		    </div>
+		  </div>
+
+		   <div class="list" ng-show="infodiv">
+			  <label class="item item-input item-floating-label">
+			    <span class="input-label">Role Name</span>
+			    <input type="text" placeholder="Role Name" ng-model="role.name">
+			  </label>
+		 
+			 <label class="item item-input item-floating-label">
+			    <span class="input-label">Description</span>
+			    <textarea  placeholder="Description" ng-model="role.description" ng-keyup="autoExpand($event)" ng-model="role.description"></textarea>
+			 </label>
+		  </div>
+		
+		  <div class="list" ng-show="groupdiv">
+		    <a class="item " href="#" ng-repeat="col in listArraydata[0].payload.data" >
+		        <h3 ng-bind="col.name"></h3>
+		    </a>
+		 </div>
+
+		 <div class="list" ng-show="permitiondiv">
+		    <ion-list>
+		        <div ng-repeat="col in listArray[0].payload.data">
+		          <ion-item class="item" ng-click="toggleGroup(col)"  ng-class="{active: isGroupShown(col)}" style="margin:-3px;">
+		         	 <h3><i class="icon icon-left" ng-class="isGroupShown(col) ? 'ion-minus' : 'ion-plus'"> </i> {{col.name}}</h3> 
+		         </ion-item>
+
+		            <div class="list" ng-show="isGroupShown(col)">
+			            <div class="item item-toggle"> <h3>View</h3>
+						     <label class="toggle toggle-balanced">
+						       <input type="checkbox">
+						       <div class="track">
+						         <div class="handle"></div>
+						       </div>
+						     </label>
+					    </div>
+					    <div class="item item-toggle">  <h3>Add</h3>
+						     <label class="toggle toggle-balanced">
+						       <input type="checkbox">
+						       <div class="track">
+						         <div class="handle"></div>
+						       </div>
+						     </label>
+					    </div>
+					    <div class="item item-toggle"> <h3>Edit</h3>
+						     <label class="toggle toggle-balanced">
+						       <input type="checkbox">
+						       <div class="track">
+						         <div class="handle"></div>
+						       </div>
+						     </label>
+					    </div>
+					    <div class="item item-toggle"> <h3>Delete</h3>
+						     <label class="toggle toggle-balanced">
+						       <input type="checkbox">
+						       <div class="track">
+						         <div class="handle"></div>
+						       </div>
+						     </label>
+					    </div>
+				    </div>
+
+		        </div>
+		     </ion-list>
+		 </div>
+
+	</ion-content>
+	
+	<ion-footer-bar  class="bar-light" ng-show="infodiv">
+	  <button class="button button-block button-positive"  ng-click="validate()">Save</button>
+	</ion-footer-bar>
+
+</ion-view>

@@ -1,0 +1,46 @@
+<ion-view view-title="Lookup Information" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	<ion-content>
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Name</span>
+		    <input type="text" placeholder="Name" ng-model="lookup.name">
+		  </label>
+	
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <textarea  placeholder="Description" ng-model="lookup.description" ng-keyup="autoExpand($event)" ></textarea>
+		  </label>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">Subject Area</div>
+		    <select ng-model="lookup.subjectarea">
+		        <option value="Oracle">Oracle</option>
+	            <option selected value="Sybase">Sybase</option>
+	            <option value="My SQL">My SQL</option>
+	            <option value="Other">Other</option>
+		    </select>
+	   	  </label>
+
+	   	   <label class="item item-input item-select">
+		    <div class="input-label">Attribute</div>
+		    <select ng-model="lookup.attribute">
+		        <option value="text">Text</option>
+	            <option selected value="number">Number</option>
+	            <option value="url">URL</option>
+	        </select>
+	   	  </label>
+
+	   	  <div>
+	   	 	<a class="item" ng-href="/#/app/lookup-edit-detail"> Values <i class="icon ion-chevron-right" style="float:right;"></i>  
+	   	 	</a>
+		  </div>
+	
+		</div>
+		
+	</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Save</button>
+	</ion-footer-bar>
+</ion-view>

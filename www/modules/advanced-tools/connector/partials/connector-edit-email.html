@@ -1,0 +1,106 @@
+
+<ion-view view-title="Edit Connector Email" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	<ion-content>
+
+		<div class="list">
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Name</span>
+		    <input type="text" placeholder="Name" ng-model="connector.name">
+		  </label>
+	
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <textarea  placeholder="Description" ng-model="connector.description" ng-keyup="autoExpand($event)" ></textarea>
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Server</span>
+		    <input type="text" placeholder="Server" ng-model="connector.emailserver">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Port</span>
+		    <input type="text" placeholder="Port" ng-model="connector.emailport">
+		  </label>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">Protocol</div>
+		    <select ng-model="connector.protocol">
+		        <option value="protocol1">protocol1</option>
+                <option selected value="protocol2">protocol2</option>
+                <option value="protocol3">protocol3</option>
+      	    </select>
+	   	  </label>
+
+	  	   <label class="item item-input item-floating-label">
+		    <span class="input-label">Email</span>
+		    <input type="text" placeholder="Email" ng-model="connector.emailemail">
+		  </label>
+
+		  <div class="item item-toggle">Use SSL
+		     <label class="toggle toggle-balanced">
+		       <input type="checkbox" ng-model="connector.emailusessl">
+		       <div class="track">
+		         <div class="handle"></div>
+		       </div>
+		     </label>
+	  	  </div>
+		</div>
+
+		<div class="list">
+
+		   <label class="item item-input item-select checkbox-adjst">
+		   	  <div class="input-label"> Authentication Type</div>
+		   		<select ng-model="connector.authenticationType" id="authentication_type" >
+		       		<option ng-repeat="menu in authmodel" value="{{menu.type}}">{{menu.type}}</option>
+     	   		</select>
+	   	   </label>
+
+	   	  <div ng-if="connector.authenticationType == 'Username and Password' ">
+	   	  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">User Name</span>
+		    	<input type="text" placeholder="User Name" ng-model="connector.username">
+		  	</label>
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Password</span>
+		    	<input type="password" placeholder="Password" ng-model="connector.password">
+		  	</label>
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Confirm Password</span>
+		    	<input type="password" placeholder="Confirm Password" ng-model="connector.confirmpassword">
+		  	</label>
+	   	  </div>
+
+	   	  <div ng-if="connector.authenticationType == 'Auth'">
+	   	  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Key</span>
+		    	<input type="text" placeholder="Key" ng-model="connector.key">
+		  	</label>
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Secret</span>
+		    	<input type="password" placeholder="Secret" ng-model="connector.secret">
+		  	</label>
+	   	  </div>
+
+	   	  <div ng-if="connector.authenticationType == 'Token'">
+		  	<label class="item item-input item-floating-label">
+		   	 <span class="input-label">Token</span>
+		    	<input type="password" placeholder="Token" ng-model="connector.token">
+		  	</label>
+	   	  </div>
+
+
+	   	  <label class="item item-input item-floating-label">
+		   	 <span class="input-label">Select Agent</span>
+		    	<input type="text" placeholder="Select Agent" ng-model="connector.agent">
+		  	</label>
+		</div>
+	
+	</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Update</button>
+	</ion-footer-bar>
+</ion-view>

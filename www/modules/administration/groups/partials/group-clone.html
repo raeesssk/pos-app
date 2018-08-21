@@ -1,0 +1,23 @@
+<ion-view view-title="Clone Group" align-title="center">
+<ion-nav-buttons side="right">
+<!--  <button class="button" ng-click="validate()">Create</button> -->
+</ion-nav-buttons>  
+	<ion-content>
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Group Name</span>
+		    <input type="text" placeholder="Group Name" ng-model="group.name">
+		  </label>
+		 
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <textarea  placeholder="Description" ng-model="group.description" ng-keyup="autoExpand($event)"></textarea>
+		  </label>
+		</div>
+		
+	</ion-content>
+	
+	<ion-footer-bar  class="bar-light" >
+		<button class="button button-block button-positive" ng-click="validate()">Clone</button>
+	</ion-footer-bar>
+</ion-view>

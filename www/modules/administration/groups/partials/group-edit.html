@@ -1,0 +1,59 @@
+<ion-view view-title="Edit Group" align-title="center">
+<ion-nav-buttons side="right" >
+	
+ <a ng-click="onItemClone()" ng-hide="infodiv"><button class="button icon ion-ios-photos-outline"></button></a>
+ <a ng-href="" ng-hide="infodiv"><button class="button icon ion-trash-a" ></button></a>	
+
+ <a ng-href="/#/app/edit-usersearch-groups" ng-show="groupdiv"><button class="button button-dark" ng-click="addUser()">Add</button></a>
+ <a ng-href="/#/app/edit-rolesearch-groups" ng-show="rolediv"><button class="button button-dark" ng-click="assignRole()">Assign</button></a>
+ 
+</ion-nav-buttons>  
+	<ion-content >
+
+		 <div class="tabs-top tabs-striped tabs-background-positive tabs-color-light tab-adjust">
+		    <div class="tabs">
+		      <a ng-class="{active:tabID === 'info'}"><a ng-click="info('info')" id="infotab" class="tab-item active"> Information </a>
+		      <a ng-class="{active:tabID === 'group'}"><a ng-click="group('group')" id="grouptab" class="tab-item "> User </a>
+		  	  <a ng-class="{active:tabID === 'role'}"><a ng-click="role('role')" id="roletab" class="tab-item"> Role  </a>
+		    </div>
+		  </div> 
+
+		  <div class="list" ng-show="infodiv">
+			  <label class="item item-input item-floating-label">
+			    <span class="input-label">Group Name</span>
+			    <input type="text" placeholder="Group Name" ng-model="group.editname">
+			  </label>
+		
+
+		 	  <label class="item item-input item-floating-label">
+			    <span class="input-label">Description</span>
+			    <textarea  placeholder="Description" ng-model="group.editdescription" ng-keyup="autoExpand($event)"></textarea>
+			  </label>
+
+		 </div>
+		
+		  <div class="list" ng-show="groupdiv">
+		     <ion-list show-delete="false" can-swipe="true">
+		        <ion-item class="item " ng-href="" ng-repeat="col in listArraydata[0].payload.data">
+	                <h3 ng-bind="(col.firstName)+ ' ' +(col.lastName)"></h3>
+		             <p ng-bind="col.email"></p>
+	                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="onItemDelete(col)"></ion-option-button>
+	            </ion-item>
+		      </ion-list>
+		 </div>
+
+		  <div class="list" ng-show="rolediv">
+		    <ion-list show-delete="false" can-swipe="true">
+	            <ion-item class="item " ng-href="" ng-repeat="col in listArray[0].payload.data">
+	               <h3 ng-bind="col.name" ></h3>
+	                <ion-option-button class="button-assertive" ng-click="onItemunassign(col)">Unassign</ion-option-button>
+	            </ion-item>
+	        </ion-list>
+		 </div>
+
+	</ion-content>
+	
+	<ion-footer-bar  class="bar-light" ng-show="infodiv">
+		<button class="button button-block button-positive"  ng-click="validate()">Save</button>
+	</ion-footer-bar>
+</ion-view>

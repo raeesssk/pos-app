@@ -1,0 +1,75 @@
+[{
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 4,
+			"offset": 0,
+			"limit": 4
+		},
+		"data": [{
+			
+			"groupName": "Testing",
+			"description": "Group created for Manual testing,Automation testing and Selenium testing.",
+			"groupId": "Testing",
+			"enabled": true
+		}, {
+			"groupName": "Designing",
+			"description": "Group created for Web Designer,Mobile Apps Designer and Graphic Designer.",
+			"groupId": "Designing",
+			"enabled": true
+		}, {
+			"groupName": "Development",
+			"description": "Group created for Web Developer,Back End Developer and Mobile Application Developer.",
+			"groupId": "Development",
+			"enabled": true
+		}, {
+			"groupName": "Management",
+			"description": "Group created for Project Manager,General Manager and Assistant Manager.",
+			"groupId": "Management",
+			"enabled": true
+		}, {
+			"groupName": "Human Resource",
+			"description": "Group created for Human resource (HR) managers are involved with recruitment, training, career development, compensation and benefits",
+			"groupId": "Human Resource",
+			"enabled": true
+		}],
+		"columns": [{
+			"show": true,
+			"attribute": "groupId",
+			"label": "Group ID",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "description",
+			"label": "Description",
+			"type": "int"
+		}],
+		"link": {
+			"linkAttribute": "groupId",
+			"labelAttribute": "groupId"
+		},
+		"page": {
+			"sectionTitle": "Groups",
+			"state": "Groups",
+			"title": "Groups",
+			"actions": [{
+				"name": "delete",
+				"label": "Delete",
+				"class":"trash",
+				"tooltip":"Delete"
+			}, {
+				"name": "clone",
+				"label": "Clone",
+				"class":"clone",
+				"tooltip":"Clone"
+			}]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]
+
+

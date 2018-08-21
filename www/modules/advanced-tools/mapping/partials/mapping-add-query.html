@@ -1,0 +1,136 @@
+<ion-view view-title="Query" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	<ion-content>
+
+	  <div class="list" >
+	       
+        <div class="row" >
+            <div class="col col-50" >
+                <label class="item item-input item-select">
+                    <div class="input-label">Method</div>
+                    <select ng-model="mapping.method" ng-change="methodFunction(mapping.method)">
+                      <option value="get" selected>Get</option>
+                      <option value="post">Post</option>
+                    </select>
+                </label> 
+            </div>
+
+          	<div class="col col-50">
+	          <label class="item item-input">
+	            <input type="text" placeholder="Enter URL">
+	          </label>
+            </div>
+        </div>
+
+        
+        <div class="row" ng-show="postParamDiv">
+          <div class="col">
+            <ion-radio ng-model="choice" ng-value="'rawdata'" ng-click="dataPost('row')">Raw data</ion-radio>
+          </div>
+
+          <div class="col">
+            <ion-radio ng-model="choice" ng-value="'formdata'" ng-click="dataPost('form')">Form data</ion-radio>
+          </div>
+   		</div>
+       
+        <div ng-show="rowDiv">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Params</span>
+		    <textarea  placeholder="Params" ng-model="mapping.params" ng-keyup="autoExpand($event)" ></textarea>
+		  </label>
+        </div>
+
+        <div ng-repeat="choice in choices" ng-show="getDiv">
+            <div class="row" >
+                <div class="col col-40">
+	               <label class="item item-input">
+	                 <input type="text" placeholder="Enter Key">
+	               </label>
+              	</div>
+
+             	<div class="col col-40">
+	               <label class="item item-input">
+	                 <input type="text" placeholder="Enter Value">
+	               </label>
+             	</div>
+
+              <div class="col col-20">
+                 <button class="button button-assertive" ng-click="removeChoice()" ng-hide="$index == 0">-</button>
+              </div>
+
+            </div>
+
+             <div class="row">
+              <div class="col col-20">
+                 <button class="button button-balanced" ng-click="addNewChoice()" >+</button>
+              </div>
+            </div>
+
+        </div>
+
+        <div ng-repeat="choice in choices" ng-show="formDiv">
+            <div class="row" >
+                <div class="col col-40">
+	               <label class="item item-input">
+	                 <input type="text" placeholder="Enter Key">
+	               </label>
+              	</div>
+
+             	<div class="col col-40">
+	               <label class="item item-input">
+	                 <input type="text" placeholder="Enter Value">
+	               </label>
+             	</div>
+
+                <div class="col col-20">
+                   <button class="button button-assertive" ng-click="removeChoice()" ng-hide="$index == 0">-</button>
+                </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col col-20">
+                 <button class="button button-balanced" ng-click="addNewChoice()" >+</button>
+              </div>
+            </div>
+     	</div>
+
+     <!-- 	<label class="item item-input item-floating-label">
+		    <span class="input-label">Request</span>
+		    <textarea  placeholder="Enter Request" ng-model="mapping.request" ng-keyup="autoExpand($event)" ></textarea>
+		</label>
+
+        <label class="item item-input item-select">
+	        <div class="input-label">Date format</div>
+	        <select ng-model="mapping.dateformate" >
+	            <option value="MMM d, y h:mm:ss a">MMM d, y h:mm:ss a</option>
+	            <option value="M/d/yy h:mm a">M/d/yy h:mm a</option>
+	            <option value="EEEE, MMMM d, y">EEEE, MMMM d, y</option>
+	            <option value="MMMM d, y">MMMM d, y</option>
+	            <option value="MMM d, y">MMM d, y</option>
+	            <option value="M/d/yy" selected>M/d/yy</option>
+	            <option value="h:mm:ss a">h:mm:ss a</option>
+	            <option value="h:mm a">h:mm a</option>
+	        </select>
+	    </label> 
+
+	    <label class="item item-input item-select">
+	        <div class="input-label">Null value representation</div>
+	        <select ng-model="mapping.nullvalue" >
+	            <option value="NULL">NULL</option>
+                <option value="null">null</option>
+                <option value="0">0</option>
+                <option value="-2">-2</option>
+                <option value="NILL">NILL</option>
+                <option value="nill">nill</option>
+	        </select>
+	    </label>  -->
+
+    </div>
+		
+	</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Next</button>
+	</ion-footer-bar>
+</ion-view>

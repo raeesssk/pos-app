@@ -1,0 +1,25 @@
+<ion-view view-title="Source" align-title="center">
+<ion-nav-buttons side="right">
+  <a ng-href="/#/app/connector-add-connector-type"><button class="button button-dark">Add</button></a>
+</ion-nav-buttons> 
+	<ion-content>
+
+	<div class="list">
+		<label class="item item-input item-floating-label">
+		   <span class="input-label">Connector</span>
+		   <input type="text" placeholder="Connector Name" ng-model="mapping.connector">
+		</label>
+	
+	  <label class="item item-input item-select">
+	    <div class="input-label">Subject Area</div>
+	    <select ng-model="mapping.subjectarea" >
+	    	<option ng-repeat="d in listFeedArray[0].payload.data">{{d.subject_area}}</option>
+	    </select>
+   	  </label>
+	</div>
+		
+	</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Next</button>
+	</ion-footer-bar>
+</ion-view>

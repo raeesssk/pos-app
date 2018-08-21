@@ -1,0 +1,36 @@
+<ion-view view-title="Authentication" align-title="center">
+<ion-nav-buttons side="right">
+   <a ng-href="/#/app/filter-authentication"><button class="button icon ion-funnel"></button></a>
+    <a ng-href="/#/app/add-authentication"><button class="button button-dark">Add</button></a>
+  </ion-nav-buttons>
+  
+    <ion-content>
+        <div class="list" ng-show="listArray.length">
+            <div class="item"  ng-repeat="col in listArray[0].data.content">
+                <a ng-href="/#/app/edit-authentication/{{col.id}}" style="text-decoration: none;">
+                   <h3 ng-bind="col.name"></h3>
+                   <p ng-bind="col.domain"></p>
+                </a>
+                <div class="row email-switch">
+                    <div class="col"> 
+                         <ion-toggle ng-model="col.primary" toggle-class="toggle-balanced"  style="border:none;" 
+                          ng-click="primaryswitch(col,$event,$index,listArray[0].data.content)">Primary</ion-toggle>
+                    </div>
+                   
+                   <div class="col"> 
+                       <ion-toggle ng-model="col.enable" toggle-class="toggle-balanced"  ng-click="enableswitch(col,$event,$index)" style="border:none;">Enabled</ion-toggle>
+                   </div>
+                </div>
+           </div>
+        </div>
+
+        <div class="list" ng-show="!listArray.length" >
+            <label class="item item-input item-floating-label">
+               <h3 style=" text-align: center;">Looks like you don't have any Record.</h3>
+                <h4 style=" text-align: center;">Fortunatly, it's very easy to create one.</h4>
+                <a ng-href="/#/app/add-authentication"><button class="button button-block button-positive" ng-click="validate()" style="margin-left: -6px;">Add</button><a>
+            </label>
+        </div>
+
+    </ion-content>
+</ion-view>

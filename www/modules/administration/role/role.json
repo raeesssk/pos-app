@@ -1,0 +1,70 @@
+[{
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 4,
+			"offset": 0,
+			"limit": 4
+		},
+		"data": [{
+			
+			"roleName": "Developer",
+			"description": "The role of a Developer is to translate software requirements into workable programming code and maintain and develop programs for use in business",
+			"roleId": "Developer",
+			"enabled": true
+		}, {
+			"roleName": "Desingner",
+			"description": "The role of a desingner are works on a variety of products and activities, such as websites, advertising, books, magazines, posters, computer games, product packaging",
+			"roleId": "Desingner",
+			"enabled": true
+		}, {
+			"roleName": "Tester",
+			"description": "The role of a software tester can vary depending on project requirements includes stress testing,performance testing,functional testing and scalability testing",
+			"roleId": "Tester",
+			"enabled": true
+		}, {
+			"roleName": "Manager",
+			"description": "The role of a manager maintains staff by recruiting, selecting, orienting, and training employees; maintaining a safe, secure, and legal work environment; developing personal growth opportunities",
+			"roleId": "Manager",
+			"enabled": true
+		}, {
+			"roleName": "HR",
+			"description": "The role of a HR are recruiting staff - this includes developing job descriptions and person specifications, preparing job adverts, checking application forms, shortlisting, interviewing and selecting candidates and preparing staff handbooks",
+			"roleId": "HR",
+			"enabled": true
+		}],
+		"columns": [{
+			"show": true,
+			"attribute": "roleId",
+			"label": "Name",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "description",
+			"label": "Description",
+			"type": "int"
+		}],
+		"link": {
+			"linkAttribute": "roleId",
+			"labelAttribute": "roleId"
+		},
+		"page": {
+			"sectionTitle": "Roles",
+			"state": "Roles",
+			"title": "Roles",
+			"actions": [{
+                "name": "delete",
+                "label": "Delete",
+                "class":"trash",
+                "tooltip":"Delete"
+            }]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]
+
+

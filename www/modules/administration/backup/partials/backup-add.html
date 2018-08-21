@@ -1,0 +1,35 @@
+<ion-view view-title="New Backup" align-title="center">
+<ion-nav-buttons side="right">
+ <!-- <button class="button" ng-click="validate()">Create</button> -->
+</ion-nav-buttons>  
+<ion-content>
+	<div class="list">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Name</span>
+	    <input type="text" placeholder="Name" ng-model="backup.name">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">No of Days</span>
+	    <input type="text" placeholder="No of Days" ng-model="backup.noofdays">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Description</span>
+	    <textarea  placeholder="Description" ng-model="backup.description"></textarea>
+	  </label>
+	  <div class="item item-toggle">
+	     Enabled
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </div>
+
+	</div>
+		
+</ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive" ng-click="validate()">Create</button>
+	</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,85 @@
+<ion-view view-title="Filter" align-title="center">
+<ion-nav-buttons side="right">
+ </ion-nav-buttons>  
+    <ion-content>
+      <div class="row">
+          <div class="col">
+            <ion-radio ng-model="choice" ng-value="'bytime'" ng-click="ontimeselect()">By Time</ion-radio>
+          </div>
+
+          <div class="col">
+            <ion-radio ng-model="choice" ng-value="'byvalue'"  ng-click="onvalueselect()">By Value</ion-radio>
+          </div>
+    </div>
+
+      <div class="list" ng-show="divbytime">
+        <label class="item item-input item-select">
+            <div class="input-label">Duration</div>
+                <select ng-model="duration" ng-change="ondurationselect(duration)">
+                  <option value="24hours">24 Hours</option>
+                  <option value="7days">7 Days</option>
+                  <option value="1month">1 Month</option>
+                  <option value="3months">3 Months</option>
+                  <option value="6months">6 Months</option>
+                  <option value="1year">1 Year</option>
+                  <option value="custom">Custom</option>
+                </select>
+       </label>   
+      </div>
+
+      <div class="list" ng-show="customdiv">
+         <ionic-datepicker date="currentfromdateDate"  callback="datePickerCallbackfromdate">
+           <div class="item item-divider">From Date</div>
+            <a class="item" href="#">{{currentfromdateDate|date:'dd/MM/yyyy'}}<i class="pe pe-7s-credit" style="float:right;"></i></a>
+         </ionic-datepicker>
+
+         <ionic-datepicker date="currenttodateDate"  callback="datePickerCallbacktodate">
+          <div class="item item-divider">To Date</div>
+           <a class="item" href="#">{{currentfromdateDate|date:'dd/MM/yyyy'}}<i class="pe pe-7s-credit" style="float:right;"></i></a>
+        </ionic-datepicker>
+      </div>
+
+      <div class="list" ng-show="divbyvalue">
+
+        <div ng-repeat="choice in choices">
+            <div class="row" >
+                <div class="col col-40" >
+                    <label class="item item-input item-select">
+                         <div class="input-label">Key</div>
+                        <select ng-model="choice.userkey">
+                          <option value="firstName">First Name</option>
+                          <option value="lastLogin">Last Login</option>
+                          <option value="enabled">Enabled</option>
+                          <option value="lastFailedAttempt">Last Failed Attempt</option>
+                        </select>
+                    </label> 
+                </div>
+
+              <div class="col col-40">
+                <label class="item item-input">
+                <input type="text" placeholder="values">
+              </label>
+              </div>
+
+              <div class="col col-20">
+                 <button class="button button-assertive" ng-click="removeChoice()" ng-hide="$index == 0">-</button>
+              </div>
+
+            </div>
+
+             <div class="row">
+              <div class="col col-20">
+                 <button class="button button-balanced" ng-click="addNewChoice()" ng-hide="choices[3]">+</button>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+
+  </ion-content>
+    <ion-footer-bar  class="bar-light" >
+        <button class="button button-block button-positive" ng-click=""  ng-show="divbytime">Apply</button>
+        <button class="button button-block button-positive" ng-click=""  ng-show="divbyvalue">Apply</button>
+    </ion-footer-bar>  
+</ion-view>

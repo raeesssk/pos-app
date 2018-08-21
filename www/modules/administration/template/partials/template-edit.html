@@ -1,0 +1,66 @@
+<ion-view view-title="Edit Template" align-title="center">
+<ion-nav-buttons side="right">
+<!--  <button class="button" ng-click="validate()">Save</button> -->
+</ion-nav-buttons>  
+<ion-content>
+	<div class="list">
+	 <label class="item item-input item-select">
+	    <div class="input-label">
+	      Template Type
+	    </div>
+	    <select ng-model="template.type">
+	      <option>PUSH</option>
+	      <option selected>EMAIL</option>
+	      <option>SMS</option>
+	    </select>
+   	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Name</span>
+	    <input type="text" placeholder="Name" ng-model="template.name">
+	  </label>
+	   <label class="item item-input item-select">
+	    <div class="input-label">
+	      Trigger
+	    </div>
+	    <select ng-model="template.trigger">
+	      <option>Welcome</option>
+	      <option selected>Activation</option>
+	      <option>Registration</option>
+	    </select>
+   	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Subject</span>
+	    <input type="text" placeholder="Subject" ng-model="template.subject">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Body</span>
+	    <textarea  placeholder="Body" ng-keyup="autoExpand($event)" ng-model="template.body"></textarea>
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Notes</span>
+	    <textarea  placeholder="Notes" ng-keyup="autoExpand($event)" ng-model="template.notes"></textarea>
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Delay</span>
+	    <input type="text" placeholder="Delay" ng-model="template.delay">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">From Field</span>
+	    <input type="text" placeholder="From Field" ng-model="template.fromfield">
+	  </label>
+	  <div class="item item-toggle">
+	     Default
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </div>
+	</div>
+		
+</ion-content>
+	<ion-footer-bar  class="bar-light" >
+		<button class="button button-block button-positive" ng-click="validate()">Save</button>
+	</ion-footer-bar>
+</ion-view>

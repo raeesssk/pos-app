@@ -1,0 +1,92 @@
+<ion-view view-title="Add New Alert" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons>  
+	<ion-content>
+		<div class="list">
+      
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Alert Name</span>
+		    <input type="text" placeholder="Alert Name" ng-model="alert.name">
+		  </label>
+		
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <textarea  placeholder="Description" ng-model="alert.description" ng-keyup="autoExpand($event)" ></textarea>
+		  </label>
+
+		   <label class="item item-input item-select ">
+		      <div class="input-label"> Subject Area </div>
+		   	    <select ng-model="addAlert.subjectArea" id="subjectArea">
+  		          <option ng-repeat="d in datasources" value="{{d.subjectAreaId}}">{{d.subjectArea}} </option>
+  		      </select>
+	   	 </label>
+
+   	    <label class="item item-input item-select">
+  		    <div class="input-label"> Attributes </div>
+  		    <select  ng-model="attribute">
+  		      <option value="Text"> Text</option>
+  		      <option value="Number">Number</option>
+  		      <option value="URL">URL</option>
+  		    </select>
+	   	 </label>
+
+	   	 <div class="row" >
+          <div class="col col-50" >
+              <label class="item item-input item-select">
+                  <div class="input-label">Text is</div>
+                  <select >
+                    <option value="greater">greater than</option>
+                    <option value="less">less than</option>
+                    <option value="equal">equal</option>
+                  </select>
+              </label> 
+          </div>
+
+          <div class="col col-50">
+            <label class="item item-input">
+              <input type="text" placeholder="values">
+            </label>
+          </div>
+     
+         </div>
+
+	   	  <div ng-repeat="choice in choices">
+            <div class="row" >
+                <div class="col col-40" >
+                    <label class="item item-input item-select">
+                        <div class="input-label">Action</div>
+                        <select ng-model="choice.userkey">
+                          <option value="email">Send Text-Email</option>
+                          <option value="phone">Send Text-Phone</option>
+                        </select>
+                    </label> 
+                </div>
+
+                <div class="col col-40">
+                  <label class="item item-input">
+                 		 <input type="text" placeholder="Enter Email">
+               	  </label>
+                </div>
+
+                <div class="col col-20">
+                   <button class="button button-assertive" ng-click="removeChoice()" ng-hide="$index == 0">-</button>
+                </div>
+            </div>
+
+             <div class="row">
+              <div class="col col-20">
+                 <button class="button button-balanced" ng-click="addNewChoice()" >+</button>
+              </div>
+            </div>
+
+        </div>
+
+		</div>
+
+	</ion-content>
+
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive" ng-click="validate()">Create</button>
+	</ion-footer-bar>
+
+</ion-view>

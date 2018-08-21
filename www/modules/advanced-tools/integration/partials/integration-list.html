@@ -1,0 +1,19 @@
+
+<ion-view view-title="Integration" align-title="center">
+<ion-nav-buttons side="right">
+  <button class="button icon ion-funnel"></button>
+  <button class="button icon ion-plus-round" ng-click=""></button>
+</ion-nav-buttons>  
+   <ion-pane>
+     <ion-content>
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item class="item " href="#" ng-repeat="col in listArray[0].payload.data">
+               <h3 ng-bind="col.integrationName"></h3>
+               <p ng-bind="col.subjectArea"></p>
+               <p ng-bind="col.connector"></p>
+               <ion-option-button class="button button-assertive icon ion-trash-a" ng-click="onItemDelete(col)"></ion-option-button>       
+            </ion-item>
+        </ion-list>
+     </ion-content>
+    </ion-pane>
+</ion-view>

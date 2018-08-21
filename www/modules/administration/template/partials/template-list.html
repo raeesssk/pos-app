@@ -1,0 +1,27 @@
+<ion-view view-title="Template" align-title="center">
+<ion-nav-buttons side="right">
+    <a ng-href="/#/app/filter-template"><button class="button icon ion-funnel"></button></a>
+     <a ng-href="/#/app/add-template"><button class="button button-dark">Add</button></a>
+  </ion-nav-buttons>  
+	<ion-pane>
+       <ion-content ng-show="listArray.length">
+          <ion-list show-delete="false" can-swipe="true">
+            <ion-item class="item " ng-href="/#/app/edit-template/{{col.id}}" ng-repeat="col in listArray[0].payload.data.content">
+                <h3 ng-bind="col.name"></h3>
+    		        <!-- <p ng-bind="col.subject"></p> -->
+                <p ng-bind="col.templateTypeEnum"></p>
+    		       
+                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="onItemDelete(col.id)"></ion-option-button>
+            </ion-item>
+          </ion-list>
+       </ion-content>
+
+       <div class="list" ng-show="!listArray.length" style="margin-top: 42px;">
+            <label class="item item-input item-floating-label">
+               <h3 style=" text-align: center;">Looks like you don't have any Record.</h3>
+                <h4 style=" text-align: center;">Fortunatly, it's very easy to create one.</h4>
+                <a ng-href="/#/app/add-authentication"><button class="button button-block button-positive" ng-click="validate()" style="margin-left: -6px;">Add</button><a>
+            </label>
+        </div>
+    </ion-pane>
+</ion-view>

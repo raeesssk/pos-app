@@ -1,0 +1,90 @@
+[{
+	 
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 4,
+			"offset": 0,
+			"limit": 4
+		},
+		"data": [{
+			"name": "Country Name Lookup",
+			"description": "Lookup for mapping country code values across systems. Ex: US to USA and United States etc.",
+			"subjectArea":"Project",
+			"connector": "SQL",
+			"value":"2"
+		}, {
+			"name": "Currency Lookup",
+			"description": "Lookup for mapping currency values across systems. Ex: USD to $ and US Dollar etc.",
+			"subjectArea":"Project",
+			"connector": "Oracle, SQL",
+			"value":"5"
+		},{
+			"name": "Defect Status Lookup",
+			"description": "Lookup for mapping defect status values across systems. Ex: Done to done and DONE  etc.",
+			"subjectArea":"Defects",
+			"connector": "SQLite",
+			"value":"8"
+		},{
+			"name": "Priority Lookup",
+			"description": "Lookup for mapping priority values across systems. Ex: HIGH to high and 3 etc.",
+			"subjectArea":"Management",
+			"connector": "MongoDb, Oracle",
+			"value":"3"
+		},{
+			"name": "Country Code Lookup",
+			"description": "Lookup for mapping country code values across systems. Ex: 001 to +1 etc.",
+			"subjectArea":"Project",
+			"connector": "MySql, MongoDb",
+			"value":"9"
+		}],
+		"columns": [{
+			"show": true,
+			"attribute": "name",
+			"label": "Name",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "description",
+			"label": "Description",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "subjectArea",
+			"label": "Subject Area",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "connector",
+			"label": "Connectors",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "value",
+			"label": "Value",
+			"type": "string"
+		}],
+		"link": {
+			"linkAttribute": "lookupId",
+			"labelAttribute": "lookupId"
+		},
+		"page": {
+			"sectionTitle": "Look Up",
+			"state": "Look Up",
+			"title": "Look Up",
+			"actions": [{
+                "name": "delete",
+                "label": "Delete",
+                "class":"trash",
+                "tooltip":"Delete"
+            }]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]
+
+

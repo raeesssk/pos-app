@@ -1,0 +1,100 @@
+[
+  {
+    "code": "OK",
+    "payload": {
+      "pagination": {
+        "totalItems": 8,
+        "offset": 0,
+        "limit": 8
+      },
+      "data": [
+        {
+          "Name": "Yahoo Server",
+          "type": "LDAP Server",
+          "img": "theme/images/1.jpg",
+          "index": 1,
+          "primary": "true",
+          "enable": "off"
+        },
+        {
+          "Name": "Google Server",
+          "type": "LDAP Server",
+          "img": "theme/images/2.jpg",
+          "index": 2,
+          "primary": "false",
+          "enable": "off"
+        },
+        {
+          "Name": "Momax",
+          "type": "Active Directory",
+          "img": "theme/images/3.jpg",
+          "index": 3,
+          "primary": "true",
+          "enable": "on"
+        }
+      ],
+      "columns": [
+        {
+          "show": true,
+          "attribute": "ldapId"
+        },
+        {
+          "show": true,
+          "attribute": "Name",
+          "label": "Name",
+          "type": "string"
+        },
+        {
+          "show": true,
+          "attribute": "type",
+          "label": "Type",
+          "type": "string"
+        },
+        {
+          "show": true,
+          "attribute": "primary",
+          "label": "Primary",
+          "type": "boolean"
+        },
+        {
+          "show": true,
+          "attribute": "enabled",
+          "label": "Enable",
+          "type": "boolean"
+        }
+      ],
+      "link": {
+        "linkAttribute": "ldapId",
+        "labelAttribute": "ldapId"
+      },
+      "page": {
+        "sectionTitle": "LDAP",
+        "state": "ldap",
+        "title": "LDAP",
+        "actions": [
+          {
+            "name": "view",
+            "label": "View"
+          },
+          {
+            "name": "add",
+            "label": "Add"
+          },
+          {
+            "name": "edit",
+            "label": "Edit"
+          },
+          {
+            "name": "delete",
+            "label": "Delete"
+          }
+        ]
+      }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+  }
+]

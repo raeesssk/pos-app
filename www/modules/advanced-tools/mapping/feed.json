@@ -1,0 +1,119 @@
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 4,
+            "offset": 0,
+            "limit": 4
+        },
+        "data": [{
+
+            "subject_area": "Defects",
+            "count": "2",
+            "enabled": true
+        }, {
+            "subject_area": "Requirements",
+            "count": "1",
+            "enabled": true
+        }, {
+            "subject_area": "Location",
+            "count": "6",
+            "enabled": true
+        }, {
+            "subject_area": "Mesos",
+            "count": "3",
+            "enabled": true
+        }, {
+            "subject_area": "Facility",
+            "count": "4",
+            "enabled": true
+        }],
+        "columns": [{
+            "show": true,
+            "attribute": "subject_area",
+            "label": "Subject Area",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "count",
+            "label": "Count",
+            "type": "number"
+        }],
+        "link": {
+            "linkAttribute": "feedId",
+            "labelAttribute": "feedId"
+        },
+        "page": {
+            "sectionTitle": "Manage Feed",
+            "state": "Manage Feed",
+            "title": "Manage Feed",
+            "actions": [{
+                "name": "view",
+                "label": "View",
+                "class" :"eye",
+                "tooltip":"View"
+            }]
+        },
+        "subject_data": [{
+            "name": "Organization"
+        }, {
+            "name": "Applications"
+        }, {
+            "name": "Programs and Projects"
+        }, {
+            "name": "Requirements"
+        }, {
+            "name": "Testing"
+        }, {
+            "name": "Defects"
+        }, {
+            "name": "Software Code"
+        }, {
+            "name": "Reference Data"
+        }, {
+            "name": "Application Build"
+        }, {
+            "name": "Issues"
+        }, {
+            "name": "Tools and Technologies"
+        }, {
+            "name": "Incidents"
+        }, {
+            "name": "Asset Management"
+        }, {
+            "name": "Location"
+        }, {
+            "name": "Facility"
+        }, {
+            "name": "Project Task"
+        }],
+
+        "project_data": [{
+            "name": "Appanalytix"
+        }, {
+            "name": "Supercube"
+        }, {
+            "name": "Open office"
+        }, {
+            "name": "Apache Hadoop"
+        }, {
+            "name": "Mesos"
+        }],
+
+        "application_data": [{
+            "name": "log4jphp"
+        }, {
+            "name": "Apache Hadoop"
+        }, {
+            "name": "Accumulo"
+        }, {
+            "name": "Airavata"
+        }]
+
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

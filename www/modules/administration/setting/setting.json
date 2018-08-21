@@ -1,0 +1,61 @@
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 8,
+            "offset": 0,
+            "limit": 8
+        },
+        "data": [{
+            "Name": "Notification setting",
+            "Description": "Using Notification. A default JavaScript alert gives away the fact that your application is not native",
+            "settinId": "Notification setting"
+        }, {
+            "Name": "Reminder setting",
+            "Description": "The generated Lorem Ipsum is therefore always free from repetition",
+            "settinId": "Reminder setting"
+        }, {
+            "Name": "User setting",
+            "Description": "This solves the need to show messages independent of the users authenticated status",
+            "settinId": "User setting"
+        }],
+        "columns": [{
+            "show": true,
+            "attribute": "name",
+            "label": "Name",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "Description",
+            "label": "description",
+            "type": "string"
+        }],
+        "link": {
+            "linkAttribute": "settingId",
+            "labelAttribute": "settingId"
+        },
+        "page": {
+            "sectionTitle": "setting",
+            "state": "setting",
+            "title": "Setting",
+            "actions": [{
+                "name": "view",
+                "label": "View"
+            }, {
+                "name": "add",
+                "label": "Add"
+            }, {
+                "name": "edit",
+                "label": "Edit"
+            }, {
+                "name": "delete",
+                "label": "Delete"
+            }]
+        }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

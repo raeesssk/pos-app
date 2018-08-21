@@ -1,0 +1,24 @@
+
+<ion-view view-title="Connector" align-title="center">
+<ion-nav-buttons side="right">
+  <a ng-href="/#/app/connector-filter"><button class="button icon ion-funnel"></button></a>
+  <a ng-href="/#/app/connector-add-connector-type"><button class="button button-dark">Add</button></a>
+</ion-nav-buttons> 
+
+<!-- <ion-spinner icon="bubbles" class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner>  -->
+
+    <ion-pane >
+    
+     <ion-content   ><!-- ng-show="loading == 'Done' " -->
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item class="item " ng-click="editrecord(col)" ng-repeat="col in listArray"><!-- ng-href="/#/app/connector-edit-{{temp}}/{{col.id}}" -->
+               <h3 ng-bind="col.name"></h3>
+               <p ng-bind="col.createdDate"></p>
+                <p ng-bind="col.url"></p>
+             <!--   <p ng-bind="col.name"></p> -->
+            <ion-option-button class="button button-assertive icon ion-trash-a" ng-click="onItemDelete(col)"></ion-option-button>                
+            </ion-item>
+        </ion-list>
+     </ion-content>
+    </ion-pane>
+</ion-view>

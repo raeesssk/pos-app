@@ -1,0 +1,27 @@
+
+<ion-view view-title="Advanced Tools">
+<!-- <ion-spinner icon="bubbles" class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner> --> 
+<ion-content ><!-- ng-show="loading == 'Done' " -->
+	<div ng-repeat="menuItem in menu">
+	    <div class="row" ng-if="$even">
+	        <div class="col col-40 col-offset-10 text-center ">
+	        	 <a href="{{menu[$index].link}}" style="text-decoration: none;">
+		        	<div>
+		         		<button class="button button-block {{menu[$index].hclass}}"><i class="{{menu[$index].class}} btn-menu-dashboard" ></i>
+		         		</button>
+		        		<h5>{{menu[$index].submenu}}</h5>
+		       		 </div>
+	       		</a>
+	       	</div>
+	        <div class="col col-40  text-center">
+	        	 <a href="{{menu[$index + 1].link}}" style="text-decoration: none;"> 
+		        	<div>
+		         		<button class="button button-block {{menu[$index + 1].hclass}}"><i class="{{menu[$index + 1].class}} btn-menu-dashboard" ></i></button>
+		        	</div>
+		       		 <h5>{{menu[$index + 1].submenu}}</h5>
+	       		</a>
+	        </div>
+	    </div>
+	</div>
+</ion-content>
+</ion-view>

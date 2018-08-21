@@ -1,0 +1,28 @@
+<ion-view view-title="Lookup Information" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons> 
+	 <ion-content>
+		 <div class="list">
+			 <label class="item item-input">
+	      	   <input type="text" placeholder="Connector" ng-model="lookup.connector">
+	        </label>
+	
+			 <label class="item item-input">
+	           <input type="text" placeholder="Source value" ng-model="lookup.source">
+	        </label>
+
+		    <label class="item item-input item-select">
+              <div class="input-label">Target</div>
+	            <select ng-model="lookup.target">
+	              <option value="High" selected>High</option>
+	              <option value="Low">Low</option>
+	               <option value="Medium">Medium</option>
+	            </select>
+            </label> 
+		  </div>
+		
+	   </ion-content>
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive"  ng-click="validate()">Save</button>
+	</ion-footer-bar>
+</ion-view>

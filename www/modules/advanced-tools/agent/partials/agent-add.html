@@ -1,0 +1,25 @@
+<ion-view view-title="Add New Agent" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons>  
+	<ion-content>
+		
+		<div class="list">
+		  
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Name</span>
+		    <input type="text" placeholder="Agent Name" ng-model="agent.name">
+		  </label>
+		
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Status</span>
+		    <input type="text" placeholder="Agent Status" ng-model="agent.status">
+		  </label>
+
+	    </div>
+	    
+	</ion-content>
+
+	<ion-footer-bar  class="bar-light">
+		<button class="button button-block button-positive" ng-click="validate()">Create</button>
+	</ion-footer-bar>
+</ion-view>

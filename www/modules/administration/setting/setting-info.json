@@ -1,0 +1,77 @@
+[{
+    "code": "OK",
+    "payload": {
+        "pagination": {
+            "totalItems": 8,
+            "offset": 0,
+            "limit": 8
+        },
+        "data": [{
+            "name": "Notification setting",
+            "information": "Test information",
+            "language": "Java",
+            "time_zone": "WST",
+            "date_formate": "dd/mm/yyyy",
+            "public_key": "MMD123213",
+            "settinId": "Notification setting"
+        }],
+        "columns": [{
+            "show": true,
+            "attribute": "name",
+            "label": "Name",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "information",
+            "label": "information",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "language",
+            "label": "language",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "time_zone",
+            "label": "time_zone",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "date_formate",
+            "label": "date_formate",
+            "type": "string"
+        }, {
+            "show": true,
+            "attribute": "public_key",
+            "label": "public_key",
+            "type": "string"
+        }],
+        "link": {
+            "linkAttribute": "settingId",
+            "labelAttribute": "settingId"
+        },
+        "page": {
+            "sectionTitle": "setting",
+            "state": "setting",
+            "title": "Setting",
+            "actions": [{
+                "name": "view",
+                "label": "View"
+            }, {
+                "name": "add",
+                "label": "Add"
+            }, {
+                "name": "edit",
+                "label": "Edit"
+            }, {
+                "name": "delete",
+                "label": "Delete"
+            }]
+        }
+    },
+    "success": true,
+    "type": "list",
+    "version": "1.0",
+    "errors": [],
+    "status": 200
+}]

@@ -1,0 +1,17 @@
+
+<ion-view view-title="Lookup" align-title="center">
+<ion-nav-buttons side="right">
+    <a ng-href="/#/app/lookup-add"><button class="button button-dark">Add</button></a>
+</ion-nav-buttons>  
+   <ion-pane>
+     <ion-content>
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item class="item " href="/#/app/lookup-edit/{{col.name}}" ng-repeat="col in listArray[0].payload.data">
+               <h3 ng-bind="col.name"></h3>
+               <hp ng-bind="col.subjectArea"></p>
+                 <ion-option-button class="button button-assertive icon ion-trash-a" ng-click="onItemDelete(col)"></ion-option-button>
+                <ion-option-button class="button-positive icon ion-ios-photos-outline" ng-click=""></ion-option-button>    </ion-item>
+        </ion-list>
+     </ion-content>
+    </ion-pane>
+</ion-view>

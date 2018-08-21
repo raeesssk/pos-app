@@ -1,0 +1,28 @@
+<ion-view view-title="Completed-Orders">
+  <ion-nav-bar class="bar bar-positive">
+    <ion-nav-buttons side="left">
+      <a class="button button-clear"  ng-click="back()"><ion-icon name="arrow-back"></ion-icon></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content ng-init="getAll();">
+      <table class="table table-responsive col-xs-1 col-sm-3 col-md-2 col-lg-1" id="checkrecord">
+        <thead>
+          <tr>
+            <th>Order No</th>
+            <th>Table</th>
+            <th>Product</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="complete in completeList">
+            <td>{{complete.om_no}}</td>
+            <td>{{complete.tm_description}} ({{complete.am_name}})</td>
+            <td>{{complete.pm_description}} {{complete.pm_quantity}}</td>
+            <td>{{complete.opm_quantity}}</td>
+          </tr>
+        </tbody>
+      </table>
+        <!--/row-->
+  </ion-content>
+</ion-view>

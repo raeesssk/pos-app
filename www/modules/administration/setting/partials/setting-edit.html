@@ -1,0 +1,47 @@
+<ion-view view-title="Edit Information" align-title="center">
+<ion-nav-buttons side="right">
+ </ion-nav-buttons>  
+<ion-content>
+	<div class="list">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Company Name</span>
+	    <input type="text" placeholder="Company Name" ng-model="setting.companyname">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <span class="input-label">Information</span>
+	    <input type="text" placeholder="Information" ng-model="setting.information">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <span class="input-label">Language</span>
+	    <input type="text" placeholder="Language" ng-model="setting.language">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <span class="input-label">Time Zone</span>
+	    <input type="text" placeholder="Time Zone" ng-model="setting.timezone">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <span class="input-label">Date Formate</span>
+	    <input type="text" placeholder="Date Formate" ng-model="setting.dateformate">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <span class="input-label">Public Key</span>
+	    <input type="text" placeholder="Public Key" ng-model="setting.publickey">
+	  </label>
+	
+	  <div class="item item-toggle">
+	     Enabled
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </div>
+	  
+	</div>
+		
+</ion-content>
+	<ion-footer-bar  class="bar-light" >
+		<button class="button button-block button-positive" ng-click="">Save</button>
+	</ion-footer-bar>
+</ion-view>

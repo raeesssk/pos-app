@@ -1,0 +1,89 @@
+[
+    {
+
+        "Name":"Advanced Tools",
+        "enable" : true, 
+        "id":"admin",
+        "links":"#/advanceToolList"                 
+    },
+    
+    {
+
+        "Name":"Admin",
+        "enable" : true, 
+        "id":"admin",
+        "links":"#/adminList"                 
+    },
+
+    {
+        "Name":"Advanced Tools",
+        "enable" : false,
+        "id":"advanced-tools",  
+            "menus": 
+                [
+                    {                        
+                        "submenu": "Agent","link": "#/agentList","class":"pe pe-7s-portfolio text-primary"
+                    },
+                    {                        
+                        "submenu": "Connector","link": "#/sourceList","class":"pe pe-7s-server text-primary"
+                    },
+                    {                        
+                        "submenu": "Mapping","link": "#/mappingList","class":"pe pe-7s-map text-primary"
+                    },
+                    {                        
+                        "submenu": "Incoming Web Hooks","link": "#/webhook","class":"pe pe-7s-pin text-primary"
+                    },
+                    {                        
+                        "submenu": "Look up","link": "#/lookup","class":"pe-7s-glasses text-primary"
+                    },
+                    {                        
+                        "submenu": "Integration","link": "#/integrationList","class":"pe pe-7s-date text-primary"
+                    }
+                ]      
+    },
+    {
+
+        "Name":"Admin",
+        "enable" : false, 
+        "id":"admin",
+            "menus": 
+                [
+                    {                        
+                        "submenu": "Users","link": "#/userList","class":"pe pe-7s-user text-primary"
+                    },
+                    {                        
+                        "submenu": "Groups","link": "#/groupList","class":"pe pe-7s-users text-primary"
+                    },
+                    {                        
+                        "submenu": "Roles","link": "#/roleList","class":"pe pe-7s-date text-primary"
+                    },
+                    {                        
+                        "submenu": "Alert","link": "#/alertList","class":"pe pe-7s-bell text-primary"
+                    },
+                    {                        
+                        "submenu": "Email","link": "#/emailList","class":"pe pe-7s-mail text-primary"
+                    },
+                    {                        
+                        "submenu": "Template","link": "#/templateList","class":"pe pe-7s-photo-gallery text-primary"
+                    },
+                    {                        
+                        "submenu": "Back Up","link": "#/backup","class":"pe pe-7s-server text-primary"
+                    },
+                    {                        
+                        "submenu": "Authentication","link": "#/ldapList","class":"pe pe-7s-lock text-primary"
+                    },
+                    {                        
+                        "submenu": "Single Sign On","link": "#/singleSignOnList","class":"pe pe-7s-key text-primary"
+                    },
+                    {                        
+                        "submenu": "License","link": "#/licenseManagement","class":"pe pe-7s-id text-primary"
+                    },
+                    {                        
+                        "submenu": "installDCA","link": "#/installDCA","class":"pe-7s-paperclip text-primary"
+                    }
+
+                ]                       
+                
+    }
+
+]

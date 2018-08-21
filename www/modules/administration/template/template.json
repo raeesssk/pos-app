@@ -1,0 +1,103 @@
+[{
+	"code": "OK",
+	"payload": {
+		"pagination": {
+			"totalItems": 8,
+			"offset": 0,
+			"limit": 8
+		},
+		"data": [{
+			"lastFailedAttempt": "2015-02-04T19:29:54.001Z",
+			"name": "Email Template",
+			"image": null,
+			"type": "SMS",
+			"lastName": "Chungath",
+			"isActiveUser": true,
+			"failedAttempts": 14,
+			"isLocked": false,
+			"trigger": "Welcome",
+			"templateId": "sujay",
+			"email": "Email templates allow you to customize the formatting and text of emails sent by users",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2015-04-04T18:29:54.001Z",
+			"name": "Push Tempalte",
+			"image": null,
+			"type": "PUSH",
+			"lastName": "Babu",
+			"isActiveUser": true,
+			"failedAttempts": 35,
+			"isLocked": false,
+			"trigger": "Registration",
+			"templateId": "shiju",
+			"email": "Incorporating personalization techniques into email subject lines is another way to increase open rates. ",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": "2014-02-04T19:29:54.001Z",
+			"image": null,
+			"type": "EMAIL",
+			"name": "User Invite SMS",
+			"isActiveUser": true,
+			"failedAttempts": 19,
+			"isLocked": false,
+			"trigger": "Welcome",
+			"templateId": "midhun",
+			"email": "Templates can be text-only, or HTML and text, in which case the user’s email client will determine which is displayed.",
+			"enabled": true
+		}, {
+			"lastFailedAttempt": null,
+			"name": "App Alert Email",
+			"image": null,
+			"type": "SMS",
+			"lastName": "Paturi",
+			"isActiveUser": true,
+			"failedAttempts": 0,
+			"isLocked": false,
+			"trigger": "Invit",
+			"templateId": "sudheer",
+			"email": "You will be asked for an email address, and a test message will be sent using the selected template. ",
+			"enabled": true
+		}],
+		"columns": [{
+			"show": true,
+			"attribute": "name",
+			"label": "Template Name",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "email",
+			"label": "Subject",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "type",
+			"label": "Type",
+			"type": "string"
+		}, {
+			"show": true,
+			"attribute": "trigger",
+			"label": "Trigger",
+			"type": "string"
+		}],
+		"link": {
+			"linkAttribute": "templateId",
+			"labelAttribute": "templateId"
+		},
+		"page": {
+			"sectionTitle": "Users",
+			"state": "users",
+			"title": "Template",
+			"actions": [{
+                "name": "delete",
+                "label": "Delete",
+                "class":"trash",
+                "tooltip":"Delete"
+            }]
+		}
+	},
+	"success": true,
+	"type": "list",
+	"version": "1.0",
+	"errors": [],
+	"status": 200
+}]

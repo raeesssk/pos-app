@@ -1,0 +1,47 @@
+<ion-view view-title="License Management" align-title="center">
+<ion-nav-buttons side="right">
+</ion-nav-buttons>  
+  <ion-content>
+      <ion-list>
+        <a class="item " ng-href="" >
+            <h3>Organisation</h3>
+            <p>{{licenseManagementData.organisation}}</p>
+        </a>
+         <a class="item " ng-href="" >
+            <h3>Date Purchased</h3>
+            <p>{{licenseManagementData.date_purchased}}"</p>
+        </a>
+         <a class="item " ng-href="" >
+            <h3>License Type</h3>
+            <p>{{licenseManagementData.license_type}}</p>
+        </a>
+         <a class="item " ng-href="" >
+            <h3>Licensed Users</h3>
+            <p>{{licenseManagementData.licensed_users}}</p>
+        </a>
+         <a class="item " ng-href="" >
+            <h3>Support Period</h3>
+            <p>{{licenseManagementData.support_period}}</p>
+        </a>
+         <a class="item " ng-href="" >
+            <h3>Support Entitlement Number</h3>
+            <p>{{licenseManagementData.support_entitlementnumber}}</p>
+        </a>
+         <a class="item " ng-href="" >
+            <h3>Server ID</h3>
+            <p>{{licenseManagementData.server_id}}</p>
+        </a>
+
+          <label class="item item-input item-stacked-label">
+  			    <span class="input-label">License Key</span>
+  			   	<textarea placeholder="License Key" ng-model="licenseManagement"></textarea>
+  			  </label>
+          
+     </ion-list> 
+
+</ion-content>
+
+   <ion-footer-bar  class="bar-light" >
+      <button class="button button-block button-positive" type="submit" ng-click="">Upgrade</button>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,18 @@
+
+<ion-view view-title="Mapping" align-title="center">
+<ion-nav-buttons side="right">
+    <a ng-href="/#/app/mapping-filter"><button class="button icon ion-funnel"></button></a>
+    <a ng-href="/#/app/mapping-add"><button class="button button-dark">Add</button></a>
+</ion-nav-buttons>  
+   <ion-pane>
+      <ion-content>
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item class="item" href="#" ng-repeat="col in listArray[0].payload.data">
+               <h3 ng-bind="col.name"></h3>
+               <p ng-bind="col.description"></p>
+               <p ng-bind="col.connector"></p>
+            <ion-option-button class="button button-assertive icon ion-trash-a" ng-click="onItemDelete(col.id)"></ion-option-button>         </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-pane>
+</ion-view>

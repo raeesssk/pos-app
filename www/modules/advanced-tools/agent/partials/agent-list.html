@@ -1,0 +1,35 @@
+
+<ion-view view-title="Agent" align-title="center">
+<ion-nav-buttons side="right">
+<!--  <a ng-href=""><button class="button icon ion-arrow-down-a"></button></a> -->
+   <a ng-href="/#/app/agent-filter"><button class="button icon ion-funnel"></button></a>
+<!--    <a ng-href="/#/app/agent-add"><button class="button button-dark">Add</button></a> -->
+ </ion-nav-buttons>  
+    
+    <ion-spinner icon="bubbles" class="spinner-balanced" ng-hide="loading == 'Done'"></ion-spinner>
+    <ion-pane ng-show="loading == 'Done'">
+	   <ion-content>
+	      <ion-list  ng-show="listArray.length">
+            <ion-item class="item" item="item" ng-href="/#/app/agent-edit/{{col.id}}" ng-repeat="col in listArray[0].payload.data">
+                 <i ng-show="col.status=='Offline'" class="assertive icon ion-chatbubble" style=" float: right; margin-top: 13px;"></i>
+                 <i ng-show="col.status=='Online'" class="balanced icon ion-chatbubble" style=" float: right; margin-top: 13px;"></i>
+                 <h3 ng-bind="col.name"></h3>
+                 <p  ng-bind="col.status"></p>
+            	       		                       
+            </ion-item>
+
+            
+             <ion-infinite-scroll distance="2" on-infinite="loadMoreData()"  ng-if="!moredata" ></ion-infinite-scroll>
+	      </ion-list>
+
+        <div class="list" ng-show="!listArray.length">
+            <label class="item item-input item-floating-label">
+               <h3 style=" text-align: center;">Looks like you don't have any Record.</h3>
+                <h4 style=" text-align: center;">Fortunatly, it's very easy to create one.</h4>
+                <a ng-href="/#/app/agent-add"><button class="button button-block button-positive" ng-click="validate()" style="margin-left: -6px;">Add</button><a>
+            </label>
+        </div>
+
+	   </ion-content>
+    </ion-pane>
+</ion-view>
