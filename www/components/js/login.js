@@ -2,8 +2,8 @@ angular.module('vxl-mobile', ['ionic']).controller('loginCtrl', function ($scope
    
     $scope.login = {};
 // unitech.3commastechnologies.com
-$rootScope.baseURL = 'http://localhost:3000';
-  $scope.apiURL = 'http://localhost:3000/oauth/token';  
+$rootScope.baseURL = 'http://unitech.3commastechnologies.com:3000';
+  $scope.apiURL = 'http://unitech.3commastechnologies.com:3000/oauth/token';  
   // document.getElementById("load").css("display","block");
 
   $scope.cancel = function()

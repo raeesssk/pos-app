@@ -2,8 +2,8 @@ angular.module('vxl-mobile').controller('globalCtrl', ["$scope", "$http", "$root
 
 	console.log("GLobal controller called");
   
-    // $rootScope.baseURL = 'http://unitech.3commastechnologies.com:3000';
-    $rootScope.baseURL = 'http://localhost:3000';
+    $rootScope.baseURL = 'http://unitech.3commastechnologies.com:3000';
+    // $rootScope.baseURL = 'http://localhost:3000';
     $rootScope.socket = io.connect($rootScope.baseURL);
     
 
